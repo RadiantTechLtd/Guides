@@ -49,33 +49,55 @@ open ~/.zshrc
 And adding the plugins we want to use to the `plugins` array:
 
 ```bash
-plugins=(copyfile copypath dirhistory git jsontools macos web-search zsh-autosuggestions zsh-syntax-highlighting)
+plugins=(copybuffer copyfile copypath dirhistory git jsontools macos web-search zsh-autosuggestions zsh-syntax-highlighting)
 ```
 
 We'll go over each of these suggested plugins in more detail below.
+
+#### Copy terminal buffer
+
+The [`copybuffer`](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/copybuffer) plugin adds a useful function for copying the current command buffer to the clipboard, making it easy to paste the command into other applications.
+
+```bash
+copybuffer
+```
+
+#### Copy file contents
+
+The [`copyfile`](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/copyfile) plugin adds a useful function for copying the current file path to the clipboard, making it easy to paste the path into other applications.
+
+```bash
+copyfile README.md
+```
+
+#### Copy current directory path
+
+The [`copypath`](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/copypath) plugin adds a useful function for copying the current directory path to the clipboard, making it easy to paste the path into other applications.
+
+```bash
+copydir
+```
+
+#### Directory history
+
+The [`dirhistory`](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/dirhistory) plugin adds a useful function for navigating to a previously visited directory, making it easy to quickly jump to a directory you've visited recently.
+
+```bash
+dirhistory
+```
 
 #### Git
 
 This plugin adds `Git` integration to the shell, providing useful shortcuts and prompts for working with `Git` repositories.
 
-#### Auto suggestions
+#### JSON tools
 
-The `zsh-autosuggestions` plugin adds auto-suggestions to the shell, making it easier to run commands by suggesting commands that have been previously run.
+The [`jsontools`](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/jsontools) plugin adds a variety of useful functions for working with `JSON` data, including functions for formatting, validating, and converting `JSON` data.
 
-We'll need to clone the `zsh-autosuggestions` repository into the `~/.oh-my-zsh/plugins` directory:
-
-```bash
-git clone https://github.com/zsh-users/zsh-autosuggestions ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions
-```
-
-#### Syntax highlighting
-
-The `zsh-syntax-highlighting` plugin adds syntax highlighting to the shell, making it easier to read commands and spot errors.
-
-We'll need to clone the `zsh-syntax-highlighting` repository into the `~/.oh-my-zsh/plugins` directory:
+For example, to check if a file contains valid `JSON` data, you can use the `is_json` function:
 
 ```bash
-git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
+is_json < data.json
 ```
 
 #### MacOS aliases
@@ -94,46 +116,24 @@ The [`web-search`](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/web-se
 google what's the meaning of life?
 ```
 
-#### Copy current directory path
+#### Auto suggestions
 
-The [`copypath`](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/copypath) plugin adds a useful function for copying the current directory path to the clipboard, making it easy to paste the path into other applications.
+The [`zsh-autosuggestions`](https://github.com/zsh-users/zsh-autosuggestions) plugin adds auto-suggestions to the shell, making it easier to run commands by suggesting commands that have been previously run.
+
+We'll need to clone the `zsh-autosuggestions` repository into the `~/.oh-my-zsh/plugins` directory:
 
 ```bash
-copydir
+git clone https://github.com/zsh-users/zsh-autosuggestions ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions
 ```
 
-#### Copy file contents
+#### Syntax highlighting
 
-The [`copyfile`](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/copyfile) plugin adds a useful function for copying the current file path to the clipboard, making it easy to paste the path into other applications.
+The [`zsh-syntax-highlighting`](https://github.com/zsh-users/zsh-syntax-highlighting.git) plugin adds syntax highlighting to the shell, making it easier to read commands and spot errors.
 
-```bash
-copyfile README.md
-```
-
-#### Copy terminal buffer
-
-The [`copybuffer`](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/copybuffer) plugin adds a useful function for copying the current command buffer to the clipboard, making it easy to paste the command into other applications.
+We'll need to clone the `zsh-syntax-highlighting` repository into the `~/.oh-my-zsh/plugins` directory:
 
 ```bash
-copybuffer
-```
-
-#### Directory history
-
-The [`dirhistory`](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/dirhistory) plugin adds a useful function for navigating to a previously visited directory, making it easy to quickly jump to a directory you've visited recently.
-
-```bash
-dirhistory
-```
-
-#### JSON tools
-
-The [`jsontools`](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/jsontools) plugin adds a variety of useful functions for working with `JSON` data, including functions for formatting, validating, and converting `JSON` data.
-
-For example, to check if a file contains valid `JSON` data, you can use the `is_json` function:
-
-```bash
-is_json < data.json
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
 ```
 
 ## Details
