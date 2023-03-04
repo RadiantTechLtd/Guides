@@ -21,6 +21,8 @@ eval "$(/opt/homebrew/bin/brew shellenv)"
 
 `Homebrew` is a popular package manager for macOS that allows users to easily install and manage a variety of software packages, libraries, and utilities on their Mac computers.
 
-With `Homebrew`, users can install, update, and uninstall software packages and dependencies from the command line, without the need for manual downloading, compiling, or configuration. `Homebrew` uses a formula system, where packages are defined as "formulae" in `Ruby` scripts, which are then downloaded, built, and installed from source code or precompiled binaries.
+With `Homebrew`, users can install, update, and uninstall software packages and dependencies from the command line, without the need for manual downloading, compiling, or configuration.
+`Homebrew` uses a formula system, where packages are defined as "formulae" in `Ruby` scripts, which are then downloaded, built, and installed from source code or precompiled binaries.
 
-`Homebrew` also allows users to create and maintain their own formulae, contribute to the community-maintained repository of formulae, and use "casks" to install graphical applications and other binary packages. It provides a convenient and streamlined way for developers and users to manage the software dependencies and tools needed for their projects or workflows.
+`Homebrew` also allows users to create and maintain their own formulae, contribute to the community-maintained repository of formulae, and use "casks" to install graphical applications and other binary packages.
+It provides a convenient and streamlined way for developers and users to manage the software dependencies and tools needed for their projects or workflows.

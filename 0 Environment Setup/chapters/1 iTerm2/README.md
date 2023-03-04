@@ -29,7 +29,8 @@ I like to have the `Battery Level`, `CPU Utilization`, `Memory Utilization`, `Ne
 
 ## Details
 
-`iTerm2` is a terminal emulator application for `macOS` that provides a more powerful and customizable alternative to the default `macOS` `Terminal`. It is an open-source application that offers a variety of features for working with command-line interfaces, such as:
+`iTerm2` is a terminal emulator application for `macOS` that provides a more powerful and customizable alternative to the default `macOS` `Terminal`.
+It is an open-source application that offers a variety of features for working with command-line interfaces, such as:
 
 -   Split panes: Users can split the terminal window into multiple panes, each with its own command prompt, to work on multiple tasks or sessions at once.
 -   Search: `iTerm2` provides a search feature that allows users to search through their command history and output, making it easier to find and reuse previous commands.

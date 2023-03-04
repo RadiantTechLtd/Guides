@@ -138,7 +138,8 @@ git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.oh-my-zsh/
 
 ## Details
 
-`Oh My Zsh` is an open-source framework for managing the configuration of the `ZSH` shell. It provides a collection of plugins, themes, and configuration files that make it easy for users to customize and enhance their `ZSH` shell experience.
+`Oh My Zsh` is an open-source framework for managing the configuration of the `ZSH` shell.
+It provides a collection of plugins, themes, and configuration files that make it easy for users to customize and enhance their `ZSH` shell experience.
 
 `Oh My Zsh` includes a variety of features including:
 

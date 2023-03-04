@@ -13,7 +13,8 @@ brew install --cask visual-studio-code
 
 ## Details
 
-`Visual Studio Code` (often abbreviated as `VSCode`) is a free and open-source code editor developed by Microsoft for `Windows`, `Linux`, and `macOS`. It is designed for web development and supports a wide range of programming languages, including `HTML`, `CSS`, `JavaScript`, `Python`, and many others.
+`Visual Studio Code` (often abbreviated as `VSCode`) is a free and open-source code editor developed by Microsoft for `Windows`, `Linux`, and `macOS`.
+It is designed for web development and supports a wide range of programming languages, including `HTML`, `CSS`, `JavaScript`, `Python`, and many others.
 
 `VSCode` provides a variety of features and extensions that make it a popular choice among developers, including:
 
@@ -23,4 +24,5 @@ brew install --cask visual-studio-code
 -   Git integration: `VSCode` includes built-in support for Git, allowing developers to easily manage their code repositories and track changes.
 -   Integrated terminal: `VSCode` includes an integrated terminal that allows developers to run command-line tools and scripts directly within the editor, without the need for a separate terminal application.
 
-Overall, `VSCode` is a powerful and customizable code editor that provides a variety of features and extensions to support modern web development workflows. Its flexibility and ease of use make it a popular choice among developers of all skill levels.
+Overall, `VSCode` is a powerful and customizable code editor that provides a variety of features and extensions to support modern web development workflows.
+Its flexibility and ease of use make it a popular choice among developers of all skill levels.
