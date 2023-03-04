@@ -8,8 +8,6 @@
 brew install zsh
 ```
 
-## Setup
-
 ## Details
 
 `ZSH` is a `Unix` shell that is an extended version of the `Bourne` shell (sh) with many additional features and improvements. It is an open-source shell that is widely used on Unix-based systems, including `macOS` and `Linux`.
