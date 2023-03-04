@@ -1,6 +1,6 @@
 # Git - Version Control
 
-`Git` is a tool for tracking changes in any set of files, usually used developing source code during software development.
+`Git` is a tool for tracking changes in any set of files, usually used to develop source code during software development.
 It is used by both individuals and teams.
 
 ## Installation

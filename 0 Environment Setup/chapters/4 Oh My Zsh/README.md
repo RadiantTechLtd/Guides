@@ -11,7 +11,7 @@ It will look like the following:
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 ```
 
-When you want to add things to your `ZSH` shell start up script, you can do so by adding them to the `~/.zshrc` file.
+When you want to add things to your `ZSH` shell start-up script, you can do so by adding them to the `~/.zshrc` file.
 
 ## Setup
 
@@ -19,7 +19,7 @@ When you want to add things to your `ZSH` shell start up script, you can do so b
 
 `Oh My Zsh` includes a variety of themes that can be used to customize the appearance of the shell, including the prompt, text colors, and more.
 You can see what the themes look like at https://github.com/ohmyzsh/ohmyzsh/wiki/Themes.
-Or see list them in the terminal by running the following command:
+Or see a list of them in the terminal by running the following command:
 
 ```bash
 ls ~/.oh-my-zsh/themes
@@ -70,7 +70,7 @@ The [`copyfile`](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/copyfile
 copyfile README.md
 ```
 
-#### Copy current directory path
+#### Copy the current directory path
 
 The [`copypath`](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/copypath) plugin adds a useful function for copying the current directory path to the clipboard, making it easy to paste the path into other applications.
 
