@@ -49,7 +49,7 @@ open ~/.zshrc
 And adding the plugins we want to use to the `plugins` array:
 
 ```bash
-plugins=(git zsh-autosuggestions zsh-syntax-highlighting macos web-search copypath copyfile dirhistory jsontools)
+plugins=(copyfile copypath dirhistory git jsontools macos web-search zsh-autosuggestions zsh-syntax-highlighting)
 ```
 
 We'll go over each of these suggested plugins in more detail below.
@@ -62,9 +62,21 @@ This plugin adds `Git` integration to the shell, providing useful shortcuts and 
 
 The `zsh-autosuggestions` plugin adds auto-suggestions to the shell, making it easier to run commands by suggesting commands that have been previously run.
 
+We'll need to clone the `zsh-autosuggestions` repository into the `~/.oh-my-zsh/plugins` directory:
+
+```bash
+git clone https://github.com/zsh-users/zsh-autosuggestions ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions
+```
+
 #### Syntax highlighting
 
 The `zsh-syntax-highlighting` plugin adds syntax highlighting to the shell, making it easier to read commands and spot errors.
+
+We'll need to clone the `zsh-syntax-highlighting` repository into the `~/.oh-my-zsh/plugins` directory:
+
+```bash
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
+```
 
 #### MacOS aliases
 
