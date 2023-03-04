@@ -8,3 +8,5 @@ How to set up a new machine, running `macOS`, for software development.
     -   [iTerm2 - Terminal](./chapters/2%20iTerm2/README.md)
     -   [Zsh - Shell](./chapters/3%20ZSH/README.md)
     -   [Oh My Zsh - Zsh Framework](./chapters/4%20Oh%20My%20Zsh/README.md)
+    -   [VSCode - Text Editor](./chapters/5%20VSCode/README.md)
+    -   [Fira Code - Font](./chapters/6%20Fira%20Code/README.md)
