@@ -17,15 +17,15 @@ Any time I refer to the terminal in this guide, I mean the `iTerm2` one.
 With the `iTerm` application open, go to `Preferences` and select the `Appearance` tab.
 Within the `General` tab, set `Theme` to `Minimal`, and `Status Bar` to `Bottom`.
 
-![iTerm2 Before](./../images/iTerm2_pre.png)
+![iTerm2 Before](./images/iTerm2_pre.png)
 
 In the `Profiles` tab, select the `Session` tab, and then check `Status bar enabled` at the bottom of the window and then click the `Configure Status Bar` button.
 
-![iTerm2 Status Bar](./../images/iTerm2_status_bar.png)
+![iTerm2 Status Bar](./images/iTerm2_status_bar.png)
 
 I like to have the `Battery Level`, `CPU Utilization`, `Memory Utilization`, `Network Throughput` in my status bar.
 
-![iTerm2 After](./../images/iTerm2_post.png)
+![iTerm2 After](./images/iTerm2_post.png)
 
 ## Details
 
