@@ -30,7 +30,7 @@ def area(real, imag, width, height, scale, max_iterations=100):
 
     for i in range(height):
         for j in range(width):
-            mandelbrot_set[i, j] = point(re[i], im[j], max_iterations)
+            mandelbrot_set[i, j] = point(re[j], im[i], max_iterations)
 
     return mandelbrot_set
 ```
@@ -40,23 +40,29 @@ def area(real, imag, width, height, scale, max_iterations=100):
 We can try out this function by running the following code in a `Python` REPL:
 
 ```bash
-poetry run python -c "import mandy; print(mandy.sample.area(0, 0, 7, 7, 0.1))"
+poetry run python -c "import mandy; print(mandy.sample.area(-0.5, 0, 17, 17, 0.2, 99))"
 ```
 
 You should see an array of numbers printed looking like this:
 
 ```
-[[  0.   0.   0.   0.   0.   0.   0.   0.   0.   0.   0.]
- [  0.   0.   0.   2.   3. 100.   3.   2.   0.   0.   0.]
- [  0.   1.   2.   2.   3. 100.   3.   2.   2.   1.   0.]
- [  1.   2.   2.   2.   6. 100.   6.   2.   2.   2.   1.]
- [  1.   2.   2.   4.  27. 100.  27.   4.   2.   2.   1.]
- [  1.   2.   3.   5.  11. 100.  11.   5.   3.   2.   1.]
- [  1.   3.   4. 100. 100. 100. 100. 100.   4.   3.   1.]
- [  1.  18.  23. 100. 100. 100. 100. 100.  23.  18.   1.]
- [  1.   3.   5. 100. 100. 100. 100. 100.   5.   3.   1.]
- [  1.   1.   3.  23. 100.   7. 100.  23.   3.   1.   1.]
- [  1.   1.   2.   2.   3.   3.   3.   2.   2.   1.   1.]]
+[[ 0.  0.  0.  0.  0.  0.  1.  1.  1.  1.  1.  1.  1.  1.  1.  1.  0.]
+ [ 0.  0.  0.  0.  0.  1.  1.  1.  1.  1.  1.  1.  1.  1.  1.  1.  1.]
+ [ 0.  0.  0.  0.  1.  1.  1.  2.  2.  2.  1.  1.  1.  1.  1.  1.  1.]
+ [ 0.  0.  0.  1.  2.  2.  2.  2.  3.  4.  5.  3.  2.  1.  1.  1.  1.]
+ [ 0.  0.  1.  2.  2.  2.  2.  3.  4. 18. 19.  4.  3.  2.  1.  1.  1.]
+ [ 0.  0.  2.  2.  2.  2.  3.  5. 19. 99. 99. 45. 14.  2.  2.  1.  1.]
+ [ 0.  0.  2.  2.  4.  5.  5.  8. 99. 99. 99. 99. 42.  3.  2.  1.  1.]
+ [ 0.  1.  3.  4.  6. 99. 99. 99. 99. 99. 99. 99. 99.  3.  2.  1.  1.]
+ [ 0. 99. 99. 99. 99. 99. 99. 99. 99. 99. 99. 99.  7.  3.  2.  2.  1.]
+ [ 0.  1.  3.  4.  6. 99. 99. 99. 99. 99. 99. 99. 99.  3.  2.  1.  1.]
+ [ 0.  0.  2.  2.  4.  5.  5.  8. 99. 99. 99. 99. 42.  3.  2.  1.  1.]
+ [ 0.  0.  2.  2.  2.  2.  3.  5. 19. 99. 99. 45. 14.  2.  2.  1.  1.]
+ [ 0.  0.  1.  2.  2.  2.  2.  3.  4. 18. 19.  4.  3.  2.  1.  1.  1.]
+ [ 0.  0.  0.  1.  2.  2.  2.  2.  3.  4.  5.  3.  2.  1.  1.  1.  1.]
+ [ 0.  0.  0.  0.  1.  1.  1.  2.  2.  2.  1.  1.  1.  1.  1.  1.  1.]
+ [ 0.  0.  0.  0.  0.  1.  1.  1.  1.  1.  1.  1.  1.  1.  1.  1.  1.]
+ [ 0.  0.  0.  0.  0.  0.  1.  1.  1.  1.  1.  1.  1.  1.  1.  1.  0.]]
 ```
 
 ## 3 - Adding colour
@@ -80,8 +86,8 @@ from . import colour
 Back inside `colour.py` we'll add a function called `grayscale()` which will convert an integer number into an RGB colour:
 
 ```python
-def grayscale(value, max_value):
-    x = value / max_value * 255
+def grayscale(value, max_iters):
+    x = value / max_iters * 255
     return (x, x, x)
 ```
 
@@ -94,13 +100,13 @@ We'll add a function named `image()` to the bottom of the `colour.py` file, whic
 ```python
 import numpy as np # We can add this to the top of the for neatness.
 
-def image(data, colouring):
+def image(data, max_iters, colouring):
     height, width = data.shape
     img = np.zeros((height, width, 3), dtype=np.uint8)
 
     for i in range(height):
         for j in range(width):
-            img[i, j] = colouring(data[i, j])
+            img[i, j] = colouring(data[i, j], max_iters)
 
     return img
 ```
@@ -154,7 +160,7 @@ img.save("mandy.png")
 We can now run the script to create an image of the Mandelbrot set:
 
 ```bash
-poetry run python scripts/run.py 0 0 1000 1000 0.01 100
+poetry run python scripts/run.py -0.5 0 1000 500 0.0025 100
 ```
 
 You should see a file called `mandy.png` in the root of the project.

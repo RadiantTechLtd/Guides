@@ -22,6 +22,6 @@ def area(real, imag, width, height, scale, max_iterations=100):
 
     for i in range(height):
         for j in range(width):
-            mandelbrot_set[i, j] = point(re[i], im[j], max_iterations)
+            mandelbrot_set[i, j] = point(re[j], im[i], max_iterations)
 
     return mandelbrot_set
