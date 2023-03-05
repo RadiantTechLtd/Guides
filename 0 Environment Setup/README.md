@@ -12,3 +12,4 @@ How to set up a new machine, running `macOS`, for software development.
     -   [Fira Code - Font](./chapters/6%20Fira%20Code/README.md)
     -   [Firefox - Web Browser](./chapters/7%20Firefox/README.md)
     -   [Python - Language Interpreter](./chapters/8%20Python/README.md)
+    -   [Poetry - Virtual Environment Manager](./chapters/9%20Poetry/README.md)
