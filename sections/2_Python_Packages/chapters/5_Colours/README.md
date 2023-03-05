@@ -51,7 +51,7 @@ cols = mandy.colour.image(data, args.max_iters, mandy.colour.jet_map)
 If we run the script now we'll see colours!
 
 ```bash
-poetry run python scripts/run.py -0.761574 -0.0847596 1000 500 1e-4 200
+poetry run python scripts/run.py -0.761574 -0.0847596 1000 500 1e-5 200
 ```
 
 Check out the wonders of $-0.761574 -0.0847596j$:
