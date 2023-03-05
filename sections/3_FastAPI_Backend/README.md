@@ -18,3 +18,4 @@ git diff --no-index chapters/0_Init/api/main.py chapters/1_Mandelbrot/api/main.p
 
 -   [Init](./chapters/0_Init/README.md)
 -   [Mandelbrot](./chapters/1_Mandelbrot/README.md)
+-   [HTML](./chapters/2_HTML/README.md)
