@@ -1,4 +1,4 @@
-# `Node.js` - `JavaScript` runtime
+# Node.js - JavaScript runtime
 
 `Node.js` is a free and open-source `JavaScript` runtime environment that allows developers to run `JavaScript` code outside of a web browser.
 

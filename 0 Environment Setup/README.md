@@ -17,3 +17,4 @@ How to set up a new machine, running `macOS`, for software development.
     -   [Rust - Compiled Language](./chapters/11%20Rust/README.md)
     -   [Docker - Containerization](./chapters/12%20Docker/README.md)
     -   [AWS CLI - Amazon Web Services Command Line Interface](./chapters/13%20AWS%20CLI/README.md)
+    -   [AWS SAM CLI - AWS Serverless Application Model Command Line Interface](./chapters/14%20AWS%20SAM%20CLI/README.md)

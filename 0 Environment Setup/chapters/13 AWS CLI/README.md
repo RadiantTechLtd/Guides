@@ -1,4 +1,4 @@
-# `AWS CLI` - Amazon Web Services Command Line Interface
+# AWS CLI - Amazon Web Services Command Line Interface
 
 `awscli` is a command line interface for managing `Amazon Web Services` (AWS) resources.
 
