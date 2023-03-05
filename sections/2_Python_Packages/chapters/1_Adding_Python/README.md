@@ -80,7 +80,3 @@ You'll see this for yourself soon!
 
 The Mandelbrot set has many interesting mathematical properties, and it has been studied extensively in the field of complex dynamics.
 It is also a popular subject of study and exploration for mathematicians, computer scientists, and artists, who have created many beautiful images and animations of the set.
-
-```
-
-```
