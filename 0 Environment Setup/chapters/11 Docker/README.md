@@ -11,6 +11,14 @@ You can install `Docker` using `Homebrew`:
 brew install --cask `docker`
 ```
 
+## Usage
+
+Start the `Docker` application running:
+
+```bash
+open -a Docker
+```
+
 ## Details
 
 `Docker` is an open-source platform that enables developers to build, ship, and run applications in containers.
