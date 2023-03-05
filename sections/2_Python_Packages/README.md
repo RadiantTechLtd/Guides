@@ -8,10 +8,10 @@ In this section we'll create a package for generating Mandelbrot plots, and fini
 Each chapter will build on the previous one.
 The `README.md` file in each chapter will contain a summary of the changes made in that chapter.
 
-To explicitly see the changes made in each chapter, you can use `git diff`:
+To explicitly see the changes made in each chapter, you can use `git diff` to compare the current chapter's file with the previous one:
 
 ```bash
-git diff chapters/0_Poetry_Init chapters/1_Adding_Python
+git diff --no-index chapters/0_Init/mandy/__init__.py chapters/1_Library/mandy/__init__.py
 ```
 
 ## Chapters
