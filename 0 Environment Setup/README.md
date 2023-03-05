@@ -14,3 +14,4 @@ How to set up a new machine, running `macOS`, for software development.
     -   [Python - Language Interpreter](./chapters/8%20Python/README.md)
     -   [Poetry - Virtual Environment Manager](./chapters/9%20Poetry/README.md)
     -   [Rust - Compiled Language](./chapters/10%20Rust/README.md)
+    -   [Docker - Containerization](./chapters/11%20Docker/README.md)
