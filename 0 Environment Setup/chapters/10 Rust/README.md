@@ -10,6 +10,44 @@ You can install `Rust`'s toolchain using `Homebrew`:
 brew install rust
 ```
 
+## Usage
+
+To create a new `Rust` project, run the following command:
+
+```bash
+cargo new my_project
+```
+
+You can then build the project using the following command:
+
+```bash
+cargo build
+```
+
+You can then run the project using the following command:
+
+```bash
+cargo run
+```
+
+If you want to add a new dependency to the project, you can do so using the following command:
+
+```bash
+cargo add some_dependency
+```
+
+If you want to add a new development dependency to the project, you can do so using the following command:
+
+```bash
+cargo add --dev some_dev_dependency
+```
+
+To publish the project to `crates.io`, run the following command:
+
+```bash
+cargo publish
+```
+
 ## Details
 
 `Rust` is a systems programming language developed by Mozilla.
