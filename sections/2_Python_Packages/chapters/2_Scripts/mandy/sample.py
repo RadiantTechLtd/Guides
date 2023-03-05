@@ -1,4 +1,4 @@
-def sample(real, imag, max_iterations=100):
+def point(real, imag, max_iterations=100):
     c = real + imag * 1j
     z = 0j
 

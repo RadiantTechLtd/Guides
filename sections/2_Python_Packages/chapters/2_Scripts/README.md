@@ -17,7 +17,7 @@ touch scripts/run.py
 
 ## 1 - Add run() function
 
-Inside `run.py` we'll add some code to parse the command line arguments, and then call our `sample` function:
+Inside `run.py` we'll add some code to parse the command line arguments, and then call our `point()` function:
 
 ```python
 import argparse
@@ -28,7 +28,7 @@ parser.add_argument("real", type=float)
 parser.add_argument("imag", type=float)
 args = parser.parse_args()
 
-iterations = mandy.sample(args.real, args.imag)
+iterations = mandy.sample.point(args.real, args.imag)
 
 print(f"({args.real}, {args.imag}) -> {iterations}")
 ```

@@ -10,10 +10,10 @@ touch mandelbrot/sample.py
 
 ## 1 - Link it to the package
 
-In the [`__init__.py`](./mandy/__init__.py) file, we'll add a line that imports the `sample` function:
+In the [`__init__.py`](./mandy/__init__.py) file, we'll add a line that imports the `sample` sub-module:
 
 ```python
-from .sample import *
+from . import sample
 ```
 
 ---
@@ -31,12 +31,12 @@ The `j` suffix is used to indicate that the number is imaginary.
 
 ---
 
-## 2 - Add sample() function
+## 2 - Add sample.point() function
 
-Inside `sample.py` we'll add a function that calculates the number of iterations required to determine whether a given location on the complex plane is within the Mandelbrot set:
+Inside `sample.py` we'll add a function that calculates the number of iterations required to determine whether a given point location on the complex plane is within the Mandelbrot set:
 
 ```python
-def sample(real, imag, max_iterations=100):
+def point(real, imag, max_iterations=100):
     c = real + imag * 1j
     z = 0j
 
@@ -61,7 +61,7 @@ poetry run python
 
 ```python
 >>> import mandy
->>> mandy.sample(0, 0)
+>>> mandy.sample.point(0, 0)
 100
 ```
 
