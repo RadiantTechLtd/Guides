@@ -18,3 +18,12 @@ git diff chapters/0_Poetry_Init chapters/1_Adding_Python
 
 -   [Poetry Init](./chapters/0_Poetry_Init/README.md)
 -   [Adding Python](./chapters/1_Adding_Python/README.md)
+
+## Mandelbrot Set
+
+We're going to be creating a package for generating Mandelbrot plots.
+The Mandelbrot set is a cool mathematical pattern that is made by doing a simple calculation over and over again for different numbers.
+If the calculation stays small enough, that number is part of the pattern.
+If the calculation gets really big, that number isn't part of the pattern.
+The pattern looks really cool and intricate, and it goes on forever in all directions.
+People like to study it because it's interesting and beautiful.
