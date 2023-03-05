@@ -26,9 +26,10 @@ import mandy
 parser = argparse.ArgumentParser()
 parser.add_argument("real", type=float)
 parser.add_argument("imag", type=float)
+parser.add_argument("max_iters", type=int)
 args = parser.parse_args()
 
-iterations = mandy.sample.point(args.real, args.imag)
+iterations = mandy.sample.point(args.real, args.imag, args.max_iters)
 
 print(f"({args.real}, {args.imag}) -> {iterations}")
 ```
@@ -38,7 +39,7 @@ print(f"({args.real}, {args.imag}) -> {iterations}")
 We can run the script by running the following command:
 
 ```bash
-poetry run python scripts/run.py 0 0
+poetry run python scripts/run.py 0 0 100
 ```
 
 The first argument is the path to the script, and the remaining arguments are the values for `real` and `imag`.

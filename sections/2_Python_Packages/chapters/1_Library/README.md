@@ -36,20 +36,20 @@ The `j` suffix is used to indicate that the number is imaginary.
 Inside `sample.py` we'll add a function that calculates the number of iterations required to determine whether a given point location on the complex plane is within the Mandelbrot set:
 
 ```python
-def point(real, imag, max_iterations=100):
+def point(real, imag, max_iters):
     c = real + imag * 1j
     z = 0j
 
-    for i in range(max_iterations):
+    for i in range(max_iters):
         z = z * z + c
 
         if abs(z) > 2.0:
             return i
 
-    return max_iterations
+    return max_iters
 ```
 
-You can read more about what this is actually calculating in the details sections below, but for now just know that this function takes in a complex number, and returns an integer between 0 and `max_iterations`.
+You can read more about what this is actually calculating in the details sections below, but for now just know that this function takes in a complex number, and returns an integer between 0 and `max_iters`.
 
 ## 3 - Try it
 
@@ -61,9 +61,11 @@ poetry run python
 
 ```python
 >>> import mandy
->>> mandy.sample.point(0, 0)
+>>> mandy.sample.point(0, 0, 100)
 100
 ```
+
+REPL stands for "Read-Eval-Print-Loop", and it's a great way to test out code interactively.
 
 ## Details
 
