@@ -16,3 +16,4 @@ How to set up a new machine, running `macOS`, for software development.
     -   [Poetry - Virtual Environment Manager](./chapters/10%20Poetry/README.md)
     -   [Rust - Compiled Language](./chapters/11%20Rust/README.md)
     -   [Docker - Containerization](./chapters/12%20Docker/README.md)
+    -   [AWS CLI - Amazon Web Services Command Line Interface](./chapters/13%20AWS%20CLI/README.md)
