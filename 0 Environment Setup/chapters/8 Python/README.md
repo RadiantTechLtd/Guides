@@ -16,6 +16,36 @@ By default, the interpreter will be installed under the command `python3`, but y
 echo 'alias python="python3"' >> ~/.zshrc
 ```
 
+## Usage
+
+If you were to use `Python` as is it will write everything into the global workspace, which is not ideal.
+
+Instead, you should use `Poetry` (explained in the next chapter) to create a new project and install/manage the dependencies you need.
+
+If you REALLY to use `Python` without `Poetry`, you can create a new project using the following command:
+
+```bash
+python -m venv my_project
+```
+
+You can then activate the project using the following command:
+
+```bash
+source my_project/bin/activate
+```
+
+You can then install a dependency using the following command:
+
+```bash
+pip install some_dependency
+```
+
+You can then run a script using the following command:
+
+```bash
+python path/to/my_script.py
+```
+
 ## Details
 
 `Python` is a high-level, general-purpose programming language that was first released in 1991 by Guido van Rossum.
