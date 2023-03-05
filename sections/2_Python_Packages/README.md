@@ -19,8 +19,13 @@ git diff chapters/0_Poetry_Init chapters/1_Adding_Python
 -   [Init](./chapters/0_Init/README.md)
 -   [Library](./chapters/1_Library/README.md)
 -   [Scripts](./chapters/2_Scripts/README.md)
+-   [Plots](./chapters/3_Plots/README.md)
+-   [Images](./chapters/4_Images/README.md)
+-   [Colours](./chapters/5_Colours/README.md)
+-   [Progress Bar](./chapters/6_Progress_Bar/README.md)
+-   [Publish](./chapters/7_Publish/README.md)
 
-## Mandelbrot Set
+## Mandelbrot Set
 
 We're going to be creating a package for generating Mandelbrot plots.
 The Mandelbrot set is a cool mathematical pattern that is made by doing a simple calculation over and over again for different numbers.
