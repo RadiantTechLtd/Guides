@@ -1,4 +1,4 @@
-# AWS SAM CLI - AWS Serverless Application Model Command Line Interface
+# AWS SAM CLI - AWS Serverless Application Model CLI
 
 `aws-sam-cli` is a command line interface for managing `AWS Serverless Application Model` (SAM) resources.
 
