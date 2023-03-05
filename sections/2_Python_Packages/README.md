@@ -16,8 +16,9 @@ git diff chapters/0_Poetry_Init chapters/1_Adding_Python
 
 ## Chapters
 
--   [Poetry Init](./chapters/0_Poetry_Init/README.md)
--   [Adding Python](./chapters/1_Adding_Python/README.md)
+-   [Init](./chapters/0_Init/README.md)
+-   [Library](./chapters/1_Library/README.md)
+-   [Scripts](./chapters/2_Scripts/README.md)
 
 ## Mandelbrot Set
 
