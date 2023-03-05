@@ -4,7 +4,7 @@
 
 ## Installation
 
-You can install a `Poetry` using `Homebrew`:
+You can install `Poetry` using `Homebrew`:
 
 ```bash
 brew install poetry
