@@ -17,6 +17,32 @@ Then add the `brew` command to your PATH:
 eval "$(/opt/homebrew/bin/brew shellenv)"
 ```
 
+## Usage
+
+To install a package, run the following command:
+
+```bash
+brew install some_package_name
+```
+
+To install a graphical application, run the following command:
+
+```bash
+brew install --cask some_app_name
+```
+
+To update all installed packages, run the following command:
+
+```bash
+brew upgrade
+```
+
+To uninstall a package, run the following command:
+
+```bash
+brew uninstall some_package
+```
+
 ## Details
 
 `Homebrew` is a popular package manager for macOS that allows users to easily install and manage a variety of software packages, libraries, and utilities on their Mac computers.
