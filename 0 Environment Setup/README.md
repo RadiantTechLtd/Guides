@@ -10,3 +10,5 @@ How to set up a new machine, running `macOS`, for software development.
     -   [Oh My Zsh - Zsh Framework](./chapters/4%20Oh%20My%20Zsh/README.md)
     -   [VSCode - Text Editor](./chapters/5%20VSCode/README.md)
     -   [Fira Code - Font](./chapters/6%20Fira%20Code/README.md)
+    -   [Firefox - Web Browser](./chapters/7%20Firefox/README.md)
+    -   [Python - Language Interpreter](./chapters/8%20Python/README.md)
