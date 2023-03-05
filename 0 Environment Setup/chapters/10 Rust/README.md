@@ -1,6 +1,6 @@
 # Rust - Language Compiler
 
-`Rust` is a programming language that is used to write low-level code.
+`Rust` is a programming language that is used to write low-level, high-performance code.
 
 ## Installation
 
@@ -15,7 +15,7 @@ brew install rust
 `Rust` is a systems programming language developed by Mozilla.
 It was first released in 2010 and has since gained popularity among developers for its performance, reliability, and safety.
 
-`Rust` is designed to provide a balance between low-level control and high-level abstractions, making it a good choice for systems programming tasks such as building operating systems, web browsers, and game engines.
+`Rust` is designed to provide a balance between low-level control and high-level abstractions, making it a good choice for systems programming tasks such as building numerical simulations, game engines and operating systems.
 
 Some key features of `Rust` include:
 
