@@ -44,3 +44,12 @@ If you try to publish a package with a name that already exists, you'll get an e
 I've renamed my package to `mandybrot` to avoid this problem.
 
 ---
+
+## 5 - Install
+
+In another project, we can now install `mandybrot` like any other package!
+
+```toml
+[tool.poetry.dependencies]
+mandybrot = "^0.0.0"
+```
