@@ -1,0 +1,15 @@
+[tool.poetry]
+name = "qr_code_generator"
+version = "0.1.0"
+description = "QR code generator"
+authors = ["FreddyWordingham <freddy@digilab.co.uk>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+qrcode = "^7.4.2"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
