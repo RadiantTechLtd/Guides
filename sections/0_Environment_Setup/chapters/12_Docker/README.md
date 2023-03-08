@@ -8,7 +8,7 @@ Containers are a lightweight way to package and run applications, and are often 
 You can install `Docker` using `Homebrew`:
 
 ```bash
-brew install --cask `docker`
+brew install --cask docker
 ```
 
 ## Usage
