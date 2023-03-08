@@ -1,5 +1,6 @@
 import qrcode
 
+
 message = "https://github.com/RadiantTechLtd/Guides/"
 filename = "radiant_tech.png"
 
