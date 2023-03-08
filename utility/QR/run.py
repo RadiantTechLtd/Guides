@@ -1,5 +1,7 @@
 import qrcode
 
-img = qrcode.make("https://github.com/RadiantTechLtd/Guides/")
-type(img)  # qrcode.image.pil.PilImage
-img.save("radiant_tech.png")
+message = "https://github.com/RadiantTechLtd/Guides/"
+filename = "radiant_tech.png"
+
+img = qrcode.make(message)
+img.save(filename)
