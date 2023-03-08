@@ -1,7 +1,7 @@
 # Docker - Containerization
 
 `Docker` is a tool that allows you to create and manage containers.
-Containers are a lightweight way to package and run applications, and are often used to deploy applications in a consistent environment.
+Containers are a lightweight way to package and run applications and are often used to deploy applications in a consistent environment.
 
 ## Installation
 
