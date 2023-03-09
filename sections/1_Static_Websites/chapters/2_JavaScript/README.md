@@ -8,12 +8,12 @@ It is used to make websites interactive.
 A simple `JavaScript` program might look like this:
 
 ```js
-function my_func() {
+function say_hello() {
     alert("Hello, World!");
 }
 ```
 
-This defines a simple function called `my_func` that displays an alert box with the message `"Hello, World!"`.
+This defines a simple function called `say_hello` that displays an alert box with the message `"Hello, World!"`.
 
 We can save the above code snippet into a file called `script.js` and include it in our `HTML` document using a `<script>` element:
 
@@ -28,7 +28,7 @@ We can save the above code snippet into a file called `script.js` and include it
     <body>
         <h1>Hello, again!</h1>
         <p>This is my second HTML document.</p>
-        <button onClick="my_func()">Click me!</button>
+        <button onClick="say_hello()">Click me!</button>
     </body>
 </html>
 ```
