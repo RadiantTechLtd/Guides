@@ -45,6 +45,8 @@ We can save the code in the snippet above into a file called [`style.css`](./sty
 </html>
 ```
 
+## Try it out
+
 Now, if we open up the file [`index.html`](./index.html) in our browser, we should see the rendered web page with styling applied.
 
 ## Details `CSS` separates the presentation of a document from its content, allowing developers to control the visual aspects of a web page independently of its

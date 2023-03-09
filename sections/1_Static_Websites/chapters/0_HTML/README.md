@@ -31,6 +31,8 @@ The root element is the top-level element of the document, and all other element
 The `<head>` element contains information about the document, such as the document's title.
 The `<body>` element contains the content of the document, such as headings (`<h1>`), paragraphs (`<p>`), buttons (`<button>`), and images (`<img>`).
 
+## Try it out
+
 If you open up the file [`index.html`](./index.html) in your browser, you should see the rendered web page.
 
 Note that nothing will happen when you click the button... yet!
