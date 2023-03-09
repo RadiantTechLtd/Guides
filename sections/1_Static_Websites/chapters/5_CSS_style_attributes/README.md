@@ -29,3 +29,8 @@ Many different attributes can be used to style the appearance of an element.
 | `left`             | Sets the left position of an element                          |
 | `right`            | Sets the right position of an element                         |
 | `z-index`          | Sets the stacking order of an element                         |
+
+## Try it out
+
+[`index.html`](./index.html) is, you guessed it, another ugly web page.
+But it (along with [`style.css`](./style.css)) contains some of the `CSS` styling attributes mentioned above.
