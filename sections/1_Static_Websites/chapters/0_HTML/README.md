@@ -28,7 +28,7 @@ The first tag in the example is `<html>`, which defines the root element of the 
 The root element is the top-level element of the document, and all other elements are nested inside it.
 
 The `<head>` element contains information about the document, such as the document's title.
-The `<body>` element contains the content of the document, such as headings, paragraphs, and images.
+The `<body>` element contains the content of the document, such as headings (`<h1>`), paragraphs (`<p>`), and images (`<img>`).
 
 If you open up the file [`index.html`](./index.html) in your browser, you should see the rendered web page.
 
