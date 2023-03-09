@@ -1,13 +1,15 @@
-body {
-    background-color: #ffaaaa;
-    font-family: sans-serif;
+* {
+    color: black;
 }
 
 h1 {
     color: green;
-    font-weight: bold;
 }
 
-span {
-    color: #0000ff;
+#id_selector {
+    color: lightskyblue;
+}
+
+.class_selector {
+    color: purple;
 }
