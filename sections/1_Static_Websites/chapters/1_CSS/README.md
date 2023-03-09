@@ -19,7 +19,7 @@ h1 {
     font-weight: bold;
 }
 
-p {
+span {
     color: #0000ff;
 }
 ```
@@ -39,7 +39,7 @@ We can save the code in the snippet above into a file called [`style.css`](./sty
     </head>
     <body>
         <h1>Hello, again!</h1>
-        <p>This is my second HTML document.</p>
+        <p>This is my <span>second</span> HTML document.</p>
         <button>Click me!</button>
     </body>
 </html>

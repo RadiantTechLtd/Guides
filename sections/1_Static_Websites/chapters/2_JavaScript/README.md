@@ -51,7 +51,7 @@ Some key features of `JavaScript` include:
 -   Dynamic typing: `JavaScript` is dynamically typed, meaning that data types are determined at runtime rather than during compilation.
 -   Prototypal inheritance: `JavaScript` uses prototypal inheritance to define object classes and their properties and methods.
 -   Functional programming: `JavaScript` supports functional programming techniques, such as closures and higher-order functions.
--   Event-driven programming: `JavaScript` is event-driven, meaning that it responds to user interactions and other events in real-time.
+-   Event-driven programming: `JavaScript` is event-driven, meaning that it responds to user interactions and other events in real time.
 -   Wide support: `JavaScript` is supported by all major browsers and can be used on a wide range of platforms, including desktop and mobile devices.
 
 Overall, `JavaScript` is a versatile and powerful programming language that is widely used for web development.

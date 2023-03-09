@@ -1,3 +1,3 @@
-function my_func() {
+function say_hello() {
     alert("Hello, World!");
 }
