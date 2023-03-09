@@ -1,0 +1,13 @@
+body {
+    background-color: #f0f0f0;
+    font-family: sans-serif;
+}
+
+h1 {
+    color: green;
+    font-weight: bold;
+}
+
+p {
+    color: #0000ff;
+}
