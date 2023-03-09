@@ -7,9 +7,17 @@ h1 {
 }
 
 #id_selector {
-    color: lightskyblue;
+    color: orange;
 }
 
 .class_selector {
     color: purple;
+}
+
+[my-custom-attribute] {
+    color: red;
+}
+
+[my-custom-attribute="something_else"] {
+    color: blue;
 }

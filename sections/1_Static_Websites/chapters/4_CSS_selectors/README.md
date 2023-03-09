@@ -1,6 +1,6 @@
 # CSS Selectors
 
-CSS selectors are used to select the elements that should be styled.
+`CSS` selectors are used to select the elements that should be styled.
 There are many different types of selectors, each with its own use case.
 In this chapter, we'll look at the most commonly used selectors.
 
@@ -25,12 +25,13 @@ You can combine selectors to select elements that match multiple criteria.
 
 You can also use attribute selectors to select elements based on their attributes, which may mutate over time.
 
-| Combinator            | Description                                                                                     |
-| --------------------- | ----------------------------------------------------------------------------------------------- |
-| `[attribute]`         | Selects all elements with the specified attribute                                               |
-| `[attribute=value]`   | Selects all elements where the specified attribute has the specified value                      |
-| `[attribute~=value]`  | Selects all elements where the specified attribute has a value containing a specific word       |
-| `[attribute$=value]`  | Selects all elements where the specified attribute has a value ending with a specific string    |
-| `[attribute*=value]`  | Selects all elements where the specified attribute has a value containing a specific string     |
-| `[attribute\|=value]` | Selects all elements where the specified attribute has a value beginning with a specific string |
-| `[attribute^=value]`  | Selects all elements where the specified attribute has a value beginning with a specific string |
+| Attribute           | Description                                                                |
+| ------------------- | -------------------------------------------------------------------------- |
+| `[attribute]`       | Selects all elements with the specified attribute                          |
+| `[attribute=value]` | Selects all elements where the specified attribute has the specified value |
+
+## Try it out
+
+[`index.html`](./index.html) is another ugly web page.
+But it (along with [`style.css`](./style.css)) contains some of the `CSS` selectors above used to colour the text.
+[`script.js`](./script.js) contains some `JavaScript` code that will update some of the attributes of the elements on the page and therefore change the way they are styled.
