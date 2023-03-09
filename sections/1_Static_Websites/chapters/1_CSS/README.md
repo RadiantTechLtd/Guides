@@ -24,7 +24,11 @@ p {
 }
 ```
 
-We can save this code into a file called [`style.css`](./style.css) and then link it to our `HTML` document using the `<link>` tag in the `<head>` element:
+Here, we've targeted all the `<h1>` and `<p>` elements using CSS selectors and specified different styles for each.
+`background-color` changes the background colour of the element.
+The `color` property changes the colour of the text, `font-size` changes the size of the text, and `font-family` changes the font family used for the text.
+
+We can save the code in the snippet above into a file called [`style.css`](./style.css) and then link it to our `HTML` document using the `<link>` tag in the `<head>` element:
 
 ```html
 <!DOCTYPE html>
@@ -36,6 +40,7 @@ We can save this code into a file called [`style.css`](./style.css) and then lin
     <body>
         <h1>Hello, again!</h1>
         <p>This is my second HTML document.</p>
+        <button>Click me!</button>
     </body>
 </html>
 ```

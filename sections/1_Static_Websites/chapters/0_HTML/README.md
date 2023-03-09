@@ -17,6 +17,7 @@ A simple `HTML` document might look like this:
     <body>
         <h1>Hello, World!</h1>
         <p>This is my first HTML document.</p>
+        <button>Click me!</button>
     </body>
 </html>
 ```
@@ -28,9 +29,11 @@ The first tag in the example is `<html>`, which defines the root element of the 
 The root element is the top-level element of the document, and all other elements are nested inside it.
 
 The `<head>` element contains information about the document, such as the document's title.
-The `<body>` element contains the content of the document, such as headings (`<h1>`), paragraphs (`<p>`), and images (`<img>`).
+The `<body>` element contains the content of the document, such as headings (`<h1>`), paragraphs (`<p>`), buttons (`<button>`), and images (`<img>`).
 
 If you open up the file [`index.html`](./index.html) in your browser, you should see the rendered web page.
+
+Note that nothing will happen when you click the button... yet!
 
 ## Details
 

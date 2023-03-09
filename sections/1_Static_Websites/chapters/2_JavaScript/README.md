@@ -3,6 +3,14 @@
 `JavaScript` is a programming language that runs in the browser.
 It is used to make websites interactive.
 
+## Example
+
+A simple `JavaScript` program might look like this:
+
+```js
+
+```
+
 ## Details
 
 `JavaScript` is a high-level, interpreted programming language that is used to create interactive and dynamic websites.
