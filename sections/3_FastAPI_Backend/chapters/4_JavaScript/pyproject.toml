@@ -1,0 +1,18 @@
+[tool.poetry]
+name = "mandy-api"
+version = "0.0.0"
+description = "Web-application for plotting the magical Mandelbrot set."
+authors = ["FreddyWordingham <freddy@digilab.co.uk>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+fastapi = "^0.92.0"
+uvicorn = "^0.20.0"
+mandybrot = {path = "/Users/fword/Projects/RADIANT/Guides/sections/2_Python_Packages/chapters/7_Publish"}
+jinja2 = "^3.1.2"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
