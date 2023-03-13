@@ -124,4 +124,10 @@ async def index(request: Request):
 
 ## 5 - Try it out
 
-Now when we run the application and visit http://localhost:8000/, we'll see the splashpage rendered from the `HTML` template.
+We can run the application by running the following command:
+
+```bash
+poetry run uvicorn api.main:app --reload --port 8000
+```
+
+And then visit http://localhost:8000/, we'll see the splashpage rendered from the `HTML` template.
