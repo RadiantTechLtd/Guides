@@ -1,31 +1,30 @@
-# CSS Style Attributes
+# CSS Selectors
 
-Many different attributes can be used to style the appearance of an element.
+`CSS` selectors are used to select the `HTML` elements you want to style.
+They are also used to select the `HTML` elements you want to interact with using `JavaScript`.
 
 ## Table
 
-| Attribute          | Description                                                   |
-| ------------------ | ------------------------------------------------------------- |
-| `background-color` | Sets the background color of an element                       |
-| `color`            | Sets the text color of an element                             |
-| `font-family`      | Sets the font family of an element                            |
-| `font-size`        | Sets the font size of an element                              |
-| `font-weight`      | Sets the font weight of an element                            |
-| `text-align`       | Sets the horizontal alignment of text within an element       |
-| `text-decoration`  | Sets the decoration of text within an element                 |
-| `text-transform`   | Sets the capitalization of text within an element             |
-| `line-height`      | Sets the height of each line of text within an element        |
-| `letter-spacing`   | Sets the spacing between characters of text within an element |
-| `word-spacing`     | Sets the spacing between words of text within an element      |
-| `padding`          | Sets the padding within an element                            |
-| `margin`           | Sets the margin outside of an element                         |
-| `border`           | Sets the border of an element                                 |
-| `border-radius`    | Sets the rounded corners of an element                        |
-| `box-shadow`       | Sets the shadow of an element                                 |
-| `display`          | Sets how an element should be displayed                       |
-| `position`         | Sets the position of an element                               |
-| `top`              | Sets the top position of an element                           |
-| `bottom`           | Sets the bottom position of an element                        |
-| `left`             | Sets the left position of an element                          |
-| `right`            | Sets the right position of an element                         |
-| `z-index`          | Sets the stacking order of an element                         |
+| Selector         | Description                                                                             | Example                                                    |
+| ---------------- | --------------------------------------------------------------------------------------- | ---------------------------------------------------------- |
+| element          | Selects all elements of a certain type.                                                 | `p { color: blue; }`                                       |
+| class            | Selects elements with a specific class name.                                            | `.my-class { font-size: 20px; }`                           |
+| ID               | Selects an element with a specific ID attribute.                                        | `#my-id { background-color: yellow; }`                     |
+| descendant       | Selects all elements that are descendants of a specified element.                       | `div p { text-align: center; }`                            |
+| child            | Selects all direct child elements of a specified element.                               | `ul > li { font-weight: bold; }`                           |
+| adjacent sibling | Selects an element that is directly after another specified element.                    | `h1 + p { font-size: 20px; }`                              |
+| general sibling  | Selects elements that are siblings of a specified element.                              | `h2 ~ p { font-style: italic; }`                           |
+| attribute        | Selects elements based on their attribute values.                                       | `a[href="https://www.example.com"] { color: green; }`      |
+| pseudo-class     | Selects elements based on a state or condition that exists on the element.              | `a:hover { text-decoration: underline; }`                  |
+| pseudo-element   | Selects a specific part of an element, such as the first letter or line of text.        | `p::first-letter { font-size: 2em; }`                      |
+| :not()           | Selects all elements that do not match a specified selector.                            | `p:not(.my-class) { color: red; }`                         |
+| :nth-child()     | Selects every nth child of an element, based on its position within its parent element. | `ul li:nth-child(odd) { background-color: lightgray; }`    |
+| :nth-of-type()   | Selects every nth element of a specific type within a parent element.                   | `ul li:nth-of-type(even) { background-color: lightgray; }` |
+| :first-child     | Selects the first child element of a parent element.                                    | `ul li:first-child { font-weight: bold; }`                 |
+| :last-child      | Selects the last child element of a parent element.                                     | `ul li:last-child { color: red; }`                         |
+| :first-of-type   | Selects the first element of a specific type within a parent element.                   | `ul li:first-of-type { font-weight: bold; }`               |
+| :last-of-type    | Selects the last element of a specific type within a parent element.                    | `ul li:last-of-type { color: red; }`                       |
+
+## Try it out
+
+[`index.html`](./index.html) shows an example of each of the basic selectors in action.
