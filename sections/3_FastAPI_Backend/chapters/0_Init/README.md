@@ -56,7 +56,7 @@ touch api/main.py
 ```
 
 In [`main.py`](./api/main.py), we'll add some code to create a `FastAPI` application.
-First we'll `import FastAPI`.
+First, we'll `import FastAPI`.
 Then we'll instantiate an `app` object.
 Finally, we'll add a `GET` route to the path "/" that returns a string saying "Hello, world!".
 
