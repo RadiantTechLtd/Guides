@@ -1,4 +1,4 @@
-# CSS Style Attributes
+# CSS Styles
 
 Many different attributes can be used to style the appearance of an element.
 
