@@ -28,9 +28,9 @@ If you run the app now, you should see the message `"script.js loaded."` in the 
 Add the following code to the [`base.html`](./templates/index.html) file:
 
 ```html
-<input type="number" id="real_input" name="number" value="0" />
-<input type="number" id="imag_input" name="number" value="0" />
-<button onClick="sample()"></button>
+<input type="number" id="real_input" name="number" value="-0.101096374" />
+<input type="number" id="imag_input" name="number" value="0.956286515" />
+<button onClick="sample()">Sample</button>
 ```
 
 ## Add sample function
