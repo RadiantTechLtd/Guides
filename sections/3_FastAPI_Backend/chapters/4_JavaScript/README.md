@@ -47,7 +47,7 @@ function sample() {
 }
 ```
 
-This function will get the values from the inputs, and then redirect the browser to the URL for the API endpoint.
+This function will get the values from the inputs, and then redirect the browser to a page showing the result of the API call.
 
 ## Try it out
 
