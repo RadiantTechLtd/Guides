@@ -7,5 +7,5 @@ body {
     display: flex;
     justify-content: center; /* align horizontally */
     align-items: end; /* align vertically */
-    height: 100vh;
+    height: calc(100vh - 30px);
 }
