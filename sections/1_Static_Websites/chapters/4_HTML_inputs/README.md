@@ -1,4 +1,4 @@
-# HTML Tags
+# HTML Inputs
 
 There are many `HTML` tags that you can use to create a web page.
 The following table lists some of the most commonly used tags.
