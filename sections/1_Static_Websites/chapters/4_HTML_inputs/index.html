@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>HTML inputs</title>
+        <link rel="stylesheet" href="style.css" />
+        <script src="script.js"></script>
+    </head>
+    <body>
+        <form onsubmit="read_values(); return false;">
+            <label for="username">Username:</label>
+            <input id="username_input" type="text" name="username" />
+            <hr />
+
+            <label for="password">Password:</label>
+            <input id="password_input" type="password" name="password" />
+            <hr />
+
+            <label for="email">E-mail:</label>
+            <input id="email_input" type="email" name="email" />
+            <hr />
+
+            <label for="number">Number:</label>
+            <input id="number_input" type="number" name="quantity" min="1" max="10" />
+            <hr />
+
+            <label for="date">Date:</label>
+            <input id="date_input" type="date" name="date" />
+            <hr />
+
+            <label for="time">Time:</label>
+            <input id="time_input" type="time" name="time" />
+            <hr />
+
+            <label for="checkbox">Checkbox:</label>
+            <input id="checkbox_input" type="checkbox" name="checkbox" checked />
+            <hr />
+
+            <label for="radio">Radio:</label>
+            <input id="radio_input" type="radio" name="mutually_exclusive_input" value="yes" checked />
+            <input id="radio_input" type="radio" name="mutually_exclusive_input" value="no" />
+            <input id="radio_input" type="radio" name="mutually_exclusive_input" value="maybe" />
+            <hr />
+
+            <label for="file">File:</label>
+            <input id="file_input" type="file" name="fileToUpload" id="fileToUpload" />
+            <hr />
+
+            <label for="reset">Reset:</label>
+            <input id="reset_input" type="reset" value="Reset" />
+            <hr />
+
+            <label for="submit">Submit:</label>
+            <input id="submit_input" type="submit" value="Submit" />
+            <hr />
+        </form>
+    </body>
+</html>

@@ -1,0 +1,13 @@
+body {
+    background-color: #ffaaaa;
+    font-family: sans-serif;
+}
+
+h1 {
+    color: green;
+    font-weight: bold;
+}
+
+span {
+    color: #0000ff;
+}
