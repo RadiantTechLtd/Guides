@@ -53,7 +53,6 @@ In the [`index.html`](./templates/index.html) file, modify the inputs to look li
 <input type="number" id="zoom_input" value="0.001" />
 <input type="number" id="max_iter_input" value="100" />
 <br />
-<br />
 <button onClick="plot()">Plot</button>
 ```
 
