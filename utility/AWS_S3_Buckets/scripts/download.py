@@ -12,10 +12,10 @@ args = parser.parse_args()
 # Constants
 BUCKET_NAME = args.bucket_name
 BUCKET_PATH = os.path.normpath(args.bucket_path)
-FILE_NAME = os.path.basename(BUCKET_PATH)
+FILE_PATH = os.path.basename(BUCKET_PATH)
 RESOURCES_DIR = "resources"
-OUTPUT_DIR = os.path.join(RESOURCES_DIR, "downloads")
-OUTPUT_FILE = os.path.join(OUTPUT_DIR, FILE_NAME)
+OUTPUT_FILE = os.path.join(RESOURCES_DIR, "downloads", FILE_PATH)
+OUTPUT_DIR = os.path.dirname(OUTPUT_FILE)
 
 
 if __name__ == "__main__":

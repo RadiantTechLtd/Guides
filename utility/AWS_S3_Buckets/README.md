@@ -31,8 +31,20 @@ poetry install
 poetry run python scripts/upload.py <bucket_name> <file_path>
 ```
 
+### Example
+
+```shell
+poetry run python scripts/upload.py to-test-with data.csv
+```
+
 ## Download a file
 
 ```shell
 poetry run python scripts/download.py <bucket_name> <bucket_path>
+```
+
+### Example
+
+```shell
+poetry run python scripts/download.py to-test-with data.csv
 ```
