@@ -28,11 +28,11 @@ poetry install
 ## Upload a file
 
 ```shell
-poetry run python scripts/upload.py --bucket <bucket_name> --file <file_path>
+poetry run python scripts/upload.py <bucket_name> <file_path>
 ```
 
 ## Download a file
 
 ```shell
-poetry run python scripts/download.py --bucket <bucket_name> --file <file_path>
+poetry run python scripts/download.py <bucket_name> <bucket_path>
 ```
