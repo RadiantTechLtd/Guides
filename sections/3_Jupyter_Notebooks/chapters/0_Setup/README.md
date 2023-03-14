@@ -1,4 +1,6 @@
-# Poetry Init
+# Setup
+
+We'll create the minimal file structure for a `Python` project using the `Poetry` package manager with the `Jupyter` tool dependency installed.
 
 ## Add pyproject.toml
 
