@@ -17,3 +17,4 @@ This makes it possible to create rich, interactive documents that combine code, 
 ## Chapters
 
 -   [Setup](./chapters/0_Setup/README.md)
+-   [Notebooks](./chapters/1_Notebooks/README.md)
