@@ -4,10 +4,10 @@ We'll create the minimal file structure for a `Rust` project using the `Cargo` p
 
 ## Add cargo.toml
 
-Create a new `Cargo` project, and we'll specify that we want to create a library:
+Create a new `Cargo` project:
 
 ```shell
-cargo init --lib . --name mandy
+cargo init --name mandy
 ```
 
 This will generate a [`Cargo.toml`](./Cargo.toml) file containing the project metadata.
@@ -24,12 +24,20 @@ cargo check
 This is a useful way of checking that code is conceptually valid when we don't want to actually run it yet.
 This is much faster than an actual build.
 
-## Test
+## Build
 
-We can run the test suite by running the following command:
+We can build the project by running the following command:
 
 ```shell
-cargo test
+cargo build
+```
+
+## Run
+
+We can run the project by running the following command:
+
+```shell
+cargo run
 ```
 
 If our source code has been changed since the last build, this will also trigger a build before running the code.
