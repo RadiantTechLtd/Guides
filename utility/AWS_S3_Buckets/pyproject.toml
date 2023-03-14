@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "testing_upload"
+name = "s3_buckets"
 version = "0.1.0"
 description = ""
 authors = ["FreddyWordingham <freddy@digilab.co.uk>"]
