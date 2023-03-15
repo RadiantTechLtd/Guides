@@ -5,7 +5,7 @@
 Let's start by adding a [`sample.py`](./mandy/sample.py) file to our project:
 
 ```bash
-touch mandelbrot/sample.py
+touch mandy/sample.py
 ```
 
 ## 1 - Link it to the package
