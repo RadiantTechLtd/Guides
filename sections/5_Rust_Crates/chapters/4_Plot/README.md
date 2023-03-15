@@ -1,4 +1,4 @@
-# Tests
+# Plotting
 
 ## Dependencies
 
