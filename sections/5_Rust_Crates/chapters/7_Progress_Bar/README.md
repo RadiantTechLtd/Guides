@@ -1,22 +1,21 @@
-# Command Line Interface
+# Progress Bar
 
-Now we have a working program, let's add a command line interface to it.
-This will allow us to pass in the parameters we want to use when generating the image, instead of having to edit the source code each time.
+Let's add a progress bar to our program.
 
 ## Add clap
 
-Add `clap`, a command line argument parser library, to the project:
+Add `indicatif`, a progress bar library:
 
 ```shell
-cargo add clap --features derive
+cargo add indicatif
 ```
 
-## Edit main.rs
+## Edit sample.rs
 
-Add the following imports at the top of the file:
+Edit the `sample.area()` function in (`sample.rs`)[`src/sample.rs`] to look like this:
 
 ```rust
-use clap::Parser; // Add this line to the top of the file.
+use indicatif::ProgressBar; // Add this line to the top of the file.
 
 #[derive(Parser, Debug)]
 #[command(author, version, about, long_about = None)]
