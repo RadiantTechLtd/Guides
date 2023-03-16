@@ -25,7 +25,7 @@ Then install the packages:
 poetry install
 ```
 
-## 1 - Add .gitignore
+## Add .gitignore
 
 I'm going to add a [`.gitignore`](./.gitignore) file to my project.
 `Python` projects use a lot of files that we don't want to commit to `git`, so we can use a template to generate a `.gitignore` file for us.
