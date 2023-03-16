@@ -1,4 +1,4 @@
-# Fortran Powered Python
+# Project Setup
 
 We'll be using the `F2PY` tool to compile `Fortran` code into a `Python` module.
 This will allow us to use `Fortran` code in our `Python` code.
