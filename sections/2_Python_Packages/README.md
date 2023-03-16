@@ -11,12 +11,12 @@ The `README.md` file in each chapter will contain a summary of the changes made 
 To explicitly see the changes made in each chapter, you can use `git diff` to compare the current chapter's file with the previous one:
 
 ```bash
-git diff --no-index chapters/0_Init/mandy/__init__.py chapters/1_Library/mandy/__init__.py
+git diff --no-index chapters/0_Setup/mandy/__init__.py chapters/1_Library/mandy/__init__.py
 ```
 
 ## Chapters
 
--   [Init](./chapters/0_Init/README.md)
+-   [Setup](./chapters/0_Setup/README.md)
 -   [Library](./chapters/1_Library/README.md)
 -   [Scripts](./chapters/2_Scripts/README.md)
 -   [Plots](./chapters/3_Plots/README.md)

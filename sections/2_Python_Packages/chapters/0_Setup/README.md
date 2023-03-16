@@ -1,4 +1,4 @@
-# Poetry Init
+# Project Setup
 
 ## 0 - Add pyproject.toml
 
