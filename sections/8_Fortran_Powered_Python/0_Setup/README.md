@@ -19,6 +19,12 @@ poetry init
 
 This will generate a [`pyproject.toml`](./pyproject.toml) file containing the project metadata.
 
+Then install the packages:
+
+```shell
+poetry install
+```
+
 ## 1 - Add .gitignore
 
 I'm going to add a [`.gitignore`](./.gitignore) file to my project.
@@ -97,7 +103,7 @@ And inside [`run.py`](./scripts/run.py) we'll add the following code:
 ```python
 import adder
 
-print(adder.fortran.__doc__)
+adder.fortran.hello()
 ```
 
 ## Try it out

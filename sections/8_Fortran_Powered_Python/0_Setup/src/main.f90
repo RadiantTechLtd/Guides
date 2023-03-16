@@ -1,3 +1,3 @@
-program hello
+subroutine hello
     print *, 'Hello, World!'
-end program hello
+end

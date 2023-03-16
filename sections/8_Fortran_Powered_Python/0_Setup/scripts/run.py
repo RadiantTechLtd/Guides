@@ -1,3 +1,3 @@
 import adder
 
-print(adder.fortran.__doc__)
+adder.fortran.hello()
