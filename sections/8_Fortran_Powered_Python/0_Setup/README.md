@@ -19,6 +19,19 @@ poetry init
 
 This will generate a [`pyproject.toml`](./pyproject.toml) file containing the project metadata.
 
+## 1 - Add .gitignore
+
+I'm going to add a [`.gitignore`](./.gitignore) file to my project.
+`Python` projects use a lot of files that we don't want to commit to `git`, so we can use a template to generate a `.gitignore` file for us.
+
+I'm going to pull the code from https://www.toptal.com/developers/gitignore/api/python into a `.gitignore` file using the `curl` command:
+
+```bash
+curl -L https://www.toptal.com/developers/gitignore/api/python,fortran > .gitignore
+```
+
+Alternatively, you can go to [gitignore.io](https://gitignore.io/) and generate a template more tailored to your needs.
+
 ## Add Dependencies
 
 ```shell
