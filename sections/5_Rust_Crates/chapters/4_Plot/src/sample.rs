@@ -17,7 +17,7 @@ pub fn point(real: f64, imag: f64, max_iters: u16) -> u16 {
 }
 
 pub fn area(real: f64, imag: f64, scale: f64, res: [usize; 2], max_iters: u16) -> Array2<u16> {
-    let mut data = Array2::zeros((res[0], res[1]));
+    let mut data = Array2::zeros((res[1], res[0]));
 
     let aspect_ratio = res[0] as f64 / res[1] as f64;
     let real_start = real - (scale * 0.5);
@@ -29,7 +29,7 @@ pub fn area(real: f64, imag: f64, scale: f64, res: [usize; 2], max_iters: u16) -
         let imag = imag_start + (delta * yi as f64);
         for xi in 0..res[0] {
             let real = real_start + (delta * xi as f64);
-            data[(xi, yi)] = point(real, imag, max_iters);
+            data[(yi, xi)] = point(real, imag, max_iters);
         }
     }
 

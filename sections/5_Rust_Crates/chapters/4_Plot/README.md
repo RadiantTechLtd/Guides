@@ -17,7 +17,9 @@ Add the following function to the `sample.rs` file:
 ```rust
 use ndarray::Array2; // At the top of the file.
 
-fn area(real: f64, imag: f64, scale: f64, res: [usize; 2], max_iters: u16, data: &mut Array2<f64>) {
+pub fn area(real: f64, imag: f64, scale: f64, res: [usize; 2], max_iters: u16) -> Array2<u16> {
+    let mut data = Array2::zeros((res[1], res[0]));
+
     let aspect_ratio = res[0] as f64 / res[1] as f64;
     let real_start = real - (scale * 0.5);
     let imag_start = imag - (scale / aspect_ratio * 0.5);
@@ -25,12 +27,14 @@ fn area(real: f64, imag: f64, scale: f64, res: [usize; 2], max_iters: u16, data:
     let delta = scale / (res[0] - 1).max(1) as f64;
 
     for yi in 0..res[1] {
-        let imag = start.im + (delta * yi as f64);
+        let imag = imag_start + (delta * yi as f64);
         for xi in 0..res[0] {
             let real = real_start + (delta * xi as f64);
-            data[(xi, yi)] = point(real, imag, max_iters);
+            data[(yi, xi)] = point(real, imag, max_iters);
         }
     }
+
+    data
 }
 ```
 
@@ -44,9 +48,9 @@ Update the [`main.rs`](./src/bin/main.rs) main function to use the `area()` func
 fn main() {
     let real = -0.5;
     let imag = 0.0;
+    let scale = 3.0;
     let max_iters = 1000;
     let res = [40, 30];
-    let scale = 3.0;
 
     let data = sample::area(real, imag, scale, res, max_iters);
     for y in 0..res[1] {
