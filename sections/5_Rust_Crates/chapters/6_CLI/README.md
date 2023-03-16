@@ -67,5 +67,5 @@ fn main() {
 Then run the program with the following command:
 
 ```shell
-cargo run --bin main --release -- --real 0.42883258532 --imag 0.23134912185 --scale 1.0e-1 --max-iters 100 --width 1920 --height 1080 --cmap 000000 FFFFFF
+cargo run --bin main --release -- --real 0.428832585319999 --imag 0.231349121850911 --scale 1.0e-8 --max-iters 1000 --width 1920 --height 1080 --cmap 062B79 16498A 5995B7 FAFBBD FDE050 F1B351 FF0000
 ```
