@@ -1,25 +1,3 @@
-# Images
-
-## Dependencies
-
-We're going to make use of colours from the `palette` crate:
-
-```shell
-cargo add image
-cargo add palette
-```
-
-## Add colour.rs
-
-Add a new file called [`colour.rs`](./src/colour.rs) to the `src` directory:
-
-```shell
-touch src/colour.rs
-```
-
-Inside it add the following code:
-
-```rust
 use image::RgbImage;
 use ndarray::{arr1, s, Array2, Array3};
 use palette::{Gradient, LinSrgb, Pixel};
@@ -69,25 +47,3 @@ pub fn encode(arr: &Array3<u8>) -> RgbImage {
     )
     .expect("Container should have the right size for the image dimensions.")
 }
-```
-
-## main.rs
-
-Update the [`main.rs`](./src/bin/main.rs) main function to use the `image()` function, and save the image to a file:
-
-```rust
-use mandy::{colour, sample};
-
-fn main() {
-    let real = 0.42883258532;
-    let imag = -0.23134912185;
-    let scale = 1.0e-1;
-    let max_iters = 1000;
-    let res = [1920, 1080];
-    let cmap = vec!["#000000", "#FFFFFF"];
-
-    let data = sample::area(real, imag, scale, res, max_iters);
-    let mut img = colour::image(data, cmap, max_iters);
-    colour::encode(&mut img).save("mandy.png").unwrap();
-}
-```

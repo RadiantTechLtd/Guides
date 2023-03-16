@@ -10,5 +10,5 @@ fn main() {
 
     let data = sample::area(real, imag, scale, res, max_iters);
     let mut img = colour::image(data, cmap, max_iters);
-    colour::encode(&mut img).save("mandelbrot.png").unwrap();
+    colour::encode(&mut img).save("mandy.png").unwrap();
 }
