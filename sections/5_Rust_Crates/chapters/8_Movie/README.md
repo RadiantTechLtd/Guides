@@ -90,8 +90,14 @@ Then run the program with the following command:
 cargo run --bin main --release -- --real 0.428832585319999 --imag 0.231349121850911 --scale 1.0e-1 --zoom 0.95 --frames 1000 --max-iters 100 --rate 10.0 --width 1920 --height 1080 --cmap 3f007a 7b0079 aa0072 d10065 f01055 ff4a42 ff762b ffa004 ffc900 fff000
 ```
 
-Then use `ffmpeg` to create a movie:
+You can then stitch the frames together with the `convert` tool:
 
 ```shell
-ffmpeg -framerate 30 -i output/mandy_%06d.png -c:v libx264 -profile:v high -crf 20 -pix_fmt yuv420p output/mandy.mp4
+convert -delay 5 -loop 0 *.png output.mov
+```
+
+or use `ffmpeg`:
+
+```shell
+ffmpeg -framerate 30 -i output/mandy_%06d.png -c:v libx264 -profile:v high -crf 20 -pix_fmt yuv420p output/mandy.mov
 ```
