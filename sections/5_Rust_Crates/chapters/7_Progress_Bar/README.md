@@ -10,12 +10,14 @@ Add `indicatif`, a progress bar library:
 cargo add indicatif
 ```
 
-## Edit sample.rs
+## Edit main.rs
 
-Edit the `sample.area()` function in (`sample.rs`)[`src/sample.rs`] to look like this:
+Replace the contents [`main.rs`](src/bin/main.rs) to with this:
 
 ```rust
-use indicatif::ProgressBar; // Add this line to the top of the file.
+use clap::Parser;
+
+use mandy::{colour, sample};
 
 #[derive(Parser, Debug)]
 #[command(author, version, about, long_about = None)]
@@ -41,11 +43,7 @@ struct Args {
     #[clap(short, long, value_parser, num_args = 2.., value_delimiter = ' ')]
     cmap: Vec<String>,
 }
-```
 
-Then replace the `main` function with the following:
-
-```rust
 fn main() {
     let args = Args::parse();
 
@@ -56,7 +54,11 @@ fn main() {
         [args.width, args.height],
         args.max_iters,
     );
-    let mut img = colour::image(data, args.cmap, args.max_iters);
+    let mut img = colour::image(
+        data,
+        args.cmap.iter().map(|s| &**s).collect(),
+        args.max_iters,
+    );
     colour::encode(&mut img).save("mandy.png").unwrap();
 }
 ```
