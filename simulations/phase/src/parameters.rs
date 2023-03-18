@@ -7,6 +7,8 @@ use std::{f64::consts::PI, fs::read_to_string, path::PathBuf};
 pub struct Parameters {
     /// Number of neutrons to simulate.
     pub num_neutrons: usize,
+    /// Number of neutrons to simulate per block.
+    pub block_size: usize,
 
     /// Neutron gun position.
     pub gun_pos: [f64; 3],

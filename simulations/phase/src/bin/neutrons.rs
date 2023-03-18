@@ -22,7 +22,8 @@ fn main() {
     let model = Model::new(&params);
 
     // Run the simulation.
-    run(model);
+    let data = run::multi_thread(params.num_neutrons, params.block_size, &model);
+    println!("SUM >> {}", data.total);
 }
 
 /// Initialise the input and output directories.

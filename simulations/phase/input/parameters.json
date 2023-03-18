@@ -1,5 +1,6 @@
 {
     "num_neutrons": 1000,
+    "block_size": 10,
 
     "gun_pos": [-1.0e-1, 0.0, 0.0],
     "gun_target": [0.0, 0.0, 0.0],
