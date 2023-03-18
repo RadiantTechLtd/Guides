@@ -3,7 +3,7 @@ use rand::thread_rng;
 use rayon::iter::{IntoParallelRefIterator, ParallelIterator};
 use std::sync::{Arc, Mutex};
 
-use crate::{data::Data, model::Model};
+use crate::{data::Data, engine::Engine, model::Model};
 
 // pub fn run(num_neutrons: u64, model: &Model) -> i32 {
 //     let pb = Arc::new(Mutex::new(ProgressBar::new(
@@ -28,7 +28,12 @@ use crate::{data::Data, model::Model};
 /// if the progress bar can not be locked.
 #[allow(clippy::expect_used)]
 #[inline]
-pub fn multi_thread<'a>(num_neutrons: usize, block_size: usize, model: &'a Model) -> Data {
+pub fn multi_thread<'a>(
+    num_neutrons: usize,
+    block_size: usize,
+    model: &'a Model,
+    engine: Engine,
+) -> Data {
     let pb = ProgressBar::new("Simulating", num_neutrons);
     let pb = Arc::new(Mutex::new(pb));
 
@@ -36,7 +41,15 @@ pub fn multi_thread<'a>(num_neutrons: usize, block_size: usize, model: &'a Model
     let threads: Vec<_> = (0..num_threads).collect();
     let mut out: Vec<_> = threads
         .par_iter()
-        .map(|_id| worker(block_size, model, Data::new(model.grid.num_voxels), &pb))
+        .map(|_id| {
+            worker(
+                block_size,
+                model,
+                Data::new(model.grid.num_voxels),
+                &pb,
+                engine,
+            )
+        })
         .collect();
     pb.lock()
         .expect("Failed to lock progress bar.")
@@ -60,6 +73,7 @@ fn worker<'a>(
     model: &'a Model,
     mut data: Data,
     pb: &Arc<Mutex<ProgressBar>>,
+    engine: Engine,
 ) -> Data {
     let mut rng = thread_rng();
 
@@ -70,9 +84,7 @@ fn worker<'a>(
         b
     } {
         for n in start..end {
-            data.total += 1;
-            // let phot = input.light.emit(&mut rng, phot_energy);
-            // engine.run(input, &mut output, &mut rng, phot);
+            engine(n, &mut rng, &model, &mut data);
         }
     }
 
