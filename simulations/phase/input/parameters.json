@@ -1,8 +1,13 @@
 {
     "num_neutrons": 1000,
+
     "gun_pos": [-1.0e-1, 0.0, 0.0],
     "gun_target": [0.0, 0.0, 0.0],
     "gun_spread": 2.0,
+
+    "scat_coeff": 1e-1,
+    "abs_coeff": 1e-1,
+
     "mins": [-0.5e-1, -0.5e-1, -0.5e-1],
     "maxs": [0.5e-1, 0.5e-1, 0.5e-1],
     "num_voxels": [32, 32, 32]
