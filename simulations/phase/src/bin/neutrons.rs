@@ -16,8 +16,7 @@ fn main() {
     init_dirs(&in_dir, &out_dir);
 
     // Read input parameters.
-    let params =
-        Parameters::load(&in_dir.join(&params_path)).expect("Failed to load parameters file");
+    let params = Parameters::load(&in_dir.join(&params_path));
 
     // Build model.
     let model = Model::new(&params);
