@@ -8,6 +8,7 @@ use std::path::PathBuf;
 pub struct Parameters {
     /// Minimum xyz-coordinates for the scattering material.
     pub mins: [f64; 3],
+    /// Maximum xyz-coordinates for the scattering material.
     pub maxs: [f64; 3],
 }
 
