@@ -52,8 +52,10 @@ fn my_engine(_i: usize, rng: &mut ThreadRng, model: &Model, data: &mut Data) {
 
     // Inject the neutron into the model.
     let dist_side = model.grid.boundary.dist_side(&neutron.ray);
-    if let Some((dist, Outside(_norm))) = dist_side {
-        neutron.travel(dist + model.bump_dist);
+    if let Some((dist, side)) = dist_side {
+        if !side.is_inside() {
+            neutron.travel(dist + model.bump_dist);
+        }
     } else {
         panic!("Failed to inject neutron into the grid.")
     }

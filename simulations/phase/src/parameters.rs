@@ -50,7 +50,9 @@ impl Parameters {
         ));
         let mut params: Parameters =
             serde_json::from_str(&contents).expect("Invalid parameters file");
+        println!("Gun spread: {} deg", params.gun_spread);
         params.gun_spread *= PI / 180.0;
+        println!("Gun spread: {} rad", params.gun_spread);
         params
     }
 }
