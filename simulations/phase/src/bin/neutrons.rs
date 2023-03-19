@@ -1,4 +1,4 @@
-use arctk::args;
+use arctk::{args, rt::Side::Outside};
 use rand::rngs::ThreadRng;
 use std::env::current_dir;
 use std::fs::create_dir;
@@ -31,7 +31,7 @@ fn main() {
     println!("Escaped grid  >> {}", data.escaped);
     println!("Absorbed      >> {}", data.absorbed);
     println!("Scatters      >> {}", data.scatters.sum());
-    data.save("neutrons.nc");
+    data.save(&out_dir);
 }
 
 /// Initialise the input and output directories.
@@ -45,22 +45,15 @@ fn init_dirs(input: &PathBuf, output: &PathBuf) {
     }
 }
 
-/// Sample the model.
-/// # Parameters
-/// * `i`: Current (unique) neutron index.
-/// * `rng`: Random number generator.
-/// * `model`: Complete information about the environment.
-/// * `data`: Mutable reference to cumulative output data to store the results.
+/// Inject a neutron into the model
 fn my_engine(_i: usize, rng: &mut ThreadRng, model: &Model, data: &mut Data) {
     // Generate a random neutron.
     let mut neutron = model.generate_neutron(rng);
 
     // Inject the neutron into the model.
     let dist_side = model.grid.boundary.dist_side(&neutron.ray);
-    if let Some((dist, side)) = dist_side {
-        if !side.is_inside() {
-            neutron.travel(dist + model.bump_dist);
-        }
+    if let Some((dist, Outside(_norm))) = dist_side {
+        neutron.travel(dist + model.bump_dist);
     } else {
         panic!("Failed to inject neutron into the grid.")
     }
@@ -72,6 +65,12 @@ fn my_engine(_i: usize, rng: &mut ThreadRng, model: &Model, data: &mut Data) {
     data.total += 1;
 }
 
+/// Sample the model.
+/// # Parameters
+/// * `i`: Current (unique) neutron index.
+/// * `rng`: Random number generator.
+/// * `model`: Complete information about the environment.
+/// * `data`: Mutable reference to cumulative output data to store the results.
 fn sample(mut neutron: Neutron, rng: &mut ThreadRng, model: &Model, data: &mut Data) {
     while let Some(index) = model.grid.voxel_index(&neutron.ray.pos) {
         let voxel = model.grid.generate_voxel(index);
@@ -104,7 +103,7 @@ fn sample(mut neutron: Neutron, rng: &mut ThreadRng, model: &Model, data: &mut D
             }
         }
     }
+
     // Neutron escaped the grid.
     data.escaped += 1;
-    return;
 }

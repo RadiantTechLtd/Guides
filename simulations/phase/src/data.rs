@@ -1,6 +1,8 @@
-use ndarray::Array3;
-use netcdf;
-use std::ops::AddAssign;
+use arctk::parse::png;
+use ndarray::{s, Array3};
+use ndarray_stats::QuantileExt;
+use palette::{Gradient, LinSrgba};
+use std::{ops::AddAssign, path::PathBuf};
 
 /// Simulation data.
 pub struct Data {
@@ -29,32 +31,30 @@ impl Data {
 
     /// Save the data to file.
     #[inline]
-    pub fn save(&self, path: &str) {
-        let mut file = netcdf::create(path).expect("Failed to create file.");
-
+    pub fn save(&self, path: &PathBuf) {
+        let grad = Gradient::new(vec![
+            LinSrgba::new(0.0, 0.0, 0.0, 1.0),
+            LinSrgba::new(1.0, 1.0, 1.0, 1.0),
+        ]);
         let shape = self.scatters.shape();
 
-        let dim1_name = "x";
-        file.add_dimension(dim1_name, shape[0])
-            .expect("Failed to add dimension.");
-        let dim2_name = "y";
-        file.add_dimension(dim2_name, shape[1])
-            .expect("Failed to add dimension.");
-        let dim3_name = "z";
-        file.add_dimension(dim3_name, shape[2])
-            .expect("Failed to add dimension.");
+        let max = *self.scatters.max().expect("Failed to find max value.");
+        let x_slice = self.scatters.slice(s![.., .., shape[0] / 2]);
+        let y_slice = self.scatters.slice(s![.., shape[1] / 2, ..]);
+        let z_slice = self.scatters.slice(s![shape[2] / 2, .., ..]);
 
-        let mut var = file
-            .add_variable::<f64>("data", &[dim1_name, dim2_name, dim3_name])
-            .expect("Failed to add variable.");
-        var.put_values(
-            self.scatters
-                .as_slice()
-                .ok_or("Missing slice data.")
-                .expect("Failed to get slice data."),
-            shape,
-        )
-        .expect("Failed to write data.");
+        png::save(
+            x_slice.mapv(|value| grad.get((value / max) as f32)).view(),
+            &path.join("x.png"),
+        );
+        png::save(
+            y_slice.mapv(|value| grad.get((value / max) as f32)).view(),
+            &path.join("y.png"),
+        );
+        png::save(
+            z_slice.mapv(|value| grad.get((value / max) as f32)).view(),
+            &path.join("z.png"),
+        );
     }
 }
 

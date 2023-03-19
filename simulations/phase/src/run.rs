@@ -5,24 +5,6 @@ use std::sync::{Arc, Mutex};
 
 use crate::{data::Data, engine::Engine, model::Model};
 
-// pub fn run(num_neutrons: u64, model: &Model) -> i32 {
-//     let pb = Arc::new(Mutex::new(ProgressBar::new(
-//         "Simulating physics",
-//         (num_neutrons as u64).try_into().unwrap(),
-//     )));
-//     (0..4).par_iter().for_each(|_thread_id| {
-//         let data = sample(model);
-//         pb.lock().expect("Could not lock progress bar.").tick();
-//     });
-//     pb.lock()
-//         .expect("Could not lock progress bar.")
-//         .finish_with_message("Simulation complete");
-
-//     return 123;
-// }
-
-// fn sample(model: &Model) -> () {}
-
 /// Run a multi-threaded simulation.
 /// # Errors
 /// if the progress bar can not be locked.
