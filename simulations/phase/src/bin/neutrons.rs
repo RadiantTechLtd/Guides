@@ -1,4 +1,4 @@
-use arctk::{args, rt::Side::Outside};
+use arctk::args;
 use rand::rngs::ThreadRng;
 use std::env::current_dir;
 use std::fs::create_dir;
@@ -26,12 +26,18 @@ fn main() {
     let model = Model::new(&params);
 
     // Run the simulation.
-    let data = run::multi_thread(params.num_neutrons, params.block_size, &model, my_engine);
-    println!("Total samples >> {}", data.total);
-    println!("Escaped grid  >> {}", data.escaped);
-    println!("Absorbed      >> {}", data.absorbed);
-    println!("Scatters      >> {}", data.scatters.sum());
-    data.save(&model.colour_map, &out_dir);
+    let mut data = Data::new(model.grid.num_voxels);
+    let num_steps = params.num_steps.min(params.num_neutrons);
+    for step in 0..params.num_steps {
+        data = run::multi_thread(
+            data,
+            params.num_neutrons / num_steps,
+            params.block_size,
+            &model,
+            my_engine,
+        );
+        data.save(&model.colour_map, &out_dir, step);
+    }
 }
 
 /// Initialise the input and output directories.
@@ -42,6 +48,21 @@ fn init_dirs(input: &PathBuf, output: &PathBuf) {
 
     if !output.exists() {
         create_dir(&output).expect("Failed to create output directory");
+    }
+
+    let subdirs = vec![
+        "scatters_x",
+        "scatters_y",
+        "scatters_z",
+        "distance_x",
+        "distance_y",
+        "distance_z",
+    ];
+    for subdir in subdirs {
+        let dir_path = output.join(subdir);
+        if !dir_path.exists() {
+            create_dir(&dir_path).expect(&format!("Failed to create {} output directory", subdir));
+        }
     }
 }
 
@@ -76,6 +97,7 @@ fn my_engine(_i: usize, rng: &mut ThreadRng, model: &Model, data: &mut Data) {
 fn sample(mut neutron: Neutron, rng: &mut ThreadRng, model: &Model, data: &mut Data) {
     while let Some(index) = model.grid.voxel_index(&neutron.ray.pos) {
         let voxel = model.grid.generate_voxel(index);
+        let mut dist_travelled = 0.0;
         loop {
             if let Some(voxel_dist) = voxel.dist(&neutron.ray) {
                 let r = rand::random::<f64>();
@@ -84,6 +106,7 @@ fn sample(mut neutron: Neutron, rng: &mut ThreadRng, model: &Model, data: &mut D
                 if scatter_dist < voxel_dist {
                     // Scattering event.
                     neutron.travel(scatter_dist);
+                    dist_travelled += scatter_dist;
                     neutron.scatter(rng);
                     neutron.weight *= model.albedo;
                     data.scatters[index] += neutron.weight;
@@ -95,6 +118,7 @@ fn sample(mut neutron: Neutron, rng: &mut ThreadRng, model: &Model, data: &mut D
                     }
                 } else {
                     neutron.travel(voxel_dist + model.bump_dist);
+                    dist_travelled += voxel_dist + model.bump_dist;
                     break;
                 }
             } else {
@@ -104,6 +128,7 @@ fn sample(mut neutron: Neutron, rng: &mut ThreadRng, model: &Model, data: &mut D
                 );
             }
         }
+        data.travelled[index] += dist_travelled;
     }
 
     // Neutron escaped the grid.

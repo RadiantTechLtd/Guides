@@ -1,13 +1,15 @@
-use arctk::parse::png;
-use ndarray::{s, Array3};
-use ndarray_stats::QuantileExt;
+use ndarray::Array3;
 use palette::{Gradient, LinSrgba};
 use std::{ops::AddAssign, path::PathBuf};
+
+use crate::colours::slice;
 
 /// Simulation data.
 pub struct Data {
     /// Scattering.
     pub scatters: Array3<f64>,
+    /// Distance travelled.
+    pub travelled: Array3<f64>,
     /// Total samples.
     pub total: usize,
     /// absorbed.
@@ -23,6 +25,7 @@ impl Data {
     pub fn new(num_voxels: [usize; 3]) -> Self {
         Self {
             scatters: Array3::zeros((num_voxels[0], num_voxels[1], num_voxels[2])),
+            travelled: Array3::zeros((num_voxels[0], num_voxels[1], num_voxels[2])),
             total: 0,
             absorbed: 0,
             escaped: 0,
@@ -31,31 +34,18 @@ impl Data {
 
     /// Save the data to file.
     #[inline]
-    pub fn save(&self, colour_map: &Gradient<LinSrgba>, path: &PathBuf) {
-        let shape = self.scatters.shape();
-
-        let max = *self.scatters.max().expect("Failed to find max value.");
-        let x_slice = self.scatters.slice(s![.., .., shape[0] / 2]);
-        let y_slice = self.scatters.slice(s![.., shape[1] / 2, ..]);
-        let z_slice = self.scatters.slice(s![shape[2] / 2, .., ..]);
-
-        png::save(
-            x_slice
-                .mapv(|value| colour_map.get((value / max) as f32))
-                .view(),
-            &path.join("x.png"),
+    pub fn save(&self, colour_map: &Gradient<LinSrgba>, path: &PathBuf, step: usize) {
+        slice(
+            self.scatters.view(),
+            colour_map,
+            &path.join("scatters"),
+            &format!("{0:>3}", step),
         );
-        png::save(
-            y_slice
-                .mapv(|value| colour_map.get((value / max) as f32))
-                .view(),
-            &path.join("y.png"),
-        );
-        png::save(
-            z_slice
-                .mapv(|value| colour_map.get((value / max) as f32))
-                .view(),
-            &path.join("z.png"),
+        slice(
+            self.travelled.view(),
+            colour_map,
+            &path.join("distance"),
+            &format!("{0:>3}", step),
         );
     }
 }
@@ -64,6 +54,7 @@ impl AddAssign<&Self> for Data {
     #[inline]
     fn add_assign(&mut self, rhs: &Self) {
         self.scatters += &rhs.scatters;
+        self.travelled += &rhs.travelled;
         self.total += rhs.total;
         self.absorbed += rhs.absorbed;
         self.escaped += rhs.escaped;

@@ -7,6 +7,8 @@ use std::{f64::consts::PI, fs::read_to_string, path::PathBuf};
 pub struct Parameters {
     /// Number of threads to use.
     pub num_threads: usize,
+    /// Number of steps.
+    pub num_steps: usize,
     /// Colour map.
     pub colour_map: Vec<String>,
 
@@ -50,9 +52,7 @@ impl Parameters {
         ));
         let mut params: Parameters =
             serde_json::from_str(&contents).expect("Invalid parameters file");
-        println!("Gun spread: {} deg", params.gun_spread);
         params.gun_spread *= PI / 180.0;
-        println!("Gun spread: {} rad", params.gun_spread);
         params
     }
 }

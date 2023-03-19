@@ -11,6 +11,7 @@ use crate::{data::Data, engine::Engine, model::Model};
 #[allow(clippy::expect_used)]
 #[inline]
 pub fn multi_thread<'a>(
+    mut data: Data,
     num_neutrons: usize,
     block_size: usize,
     model: &'a Model,
@@ -37,7 +38,7 @@ pub fn multi_thread<'a>(
         .expect("Failed to lock progress bar.")
         .finish_with_message("Simulation complete.");
 
-    let mut data = out.pop().expect("No data received.");
+    // let mut data = out.pop().expect("No data received.");
     while let Some(o) = out.pop() {
         data += &o;
     }
