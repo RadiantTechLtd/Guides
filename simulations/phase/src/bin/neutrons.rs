@@ -4,7 +4,7 @@ use std::env::current_dir;
 use std::fs::create_dir;
 use std::path::PathBuf;
 
-use phase::{run, Data, Model, Parameters};
+use phase::{run, Data, Model, Neutron, Parameters};
 
 /// Entrypoint.
 /// # Parameters
@@ -27,7 +27,11 @@ fn main() {
 
     // Run the simulation.
     let data = run::multi_thread(params.num_neutrons, params.block_size, &model, my_engine);
-    println!("SUM >> {}", data.total);
+    println!("Total samples >> {}", data.total);
+    println!("Escaped grid  >> {}", data.escaped);
+    println!("Absorbed      >> {}", data.absorbed);
+    println!("Scatters      >> {}", data.scatters.sum());
+    data.save("neutrons.nc");
 }
 
 /// Initialise the input and output directories.
@@ -43,10 +47,64 @@ fn init_dirs(input: &PathBuf, output: &PathBuf) {
 
 /// Sample the model.
 /// # Parameters
-/// * `n`: Number of neutrons to simulate.
+/// * `i`: Current (unique) neutron index.
 /// * `rng`: Random number generator.
 /// * `model`: Complete information about the environment.
 /// * `data`: Mutable reference to cumulative output data to store the results.
-fn my_engine(_n: usize, _rng: &mut ThreadRng, _model: &Model, data: &mut Data) {
+fn my_engine(_i: usize, rng: &mut ThreadRng, model: &Model, data: &mut Data) {
+    // Generate a random neutron.
+    let mut neutron = model.generate_neutron(rng);
+
+    // Inject the neutron into the model.
+    let dist_side = model.grid.boundary.dist_side(&neutron.ray);
+    if let Some((dist, side)) = dist_side {
+        if !side.is_inside() {
+            neutron.travel(dist + model.bump_dist);
+        }
+    } else {
+        panic!("Failed to inject neutron into the grid.")
+    }
+
+    // Sample the model.
+    sample(neutron, rng, model, data);
+
+    // Sample complete.
     data.total += 1;
+}
+
+fn sample(mut neutron: Neutron, rng: &mut ThreadRng, model: &Model, data: &mut Data) {
+    while let Some(index) = model.grid.voxel_index(&neutron.ray.pos) {
+        let voxel = model.grid.generate_voxel(index);
+        loop {
+            if let Some(voxel_dist) = voxel.dist(&neutron.ray) {
+                let r = rand::random::<f64>();
+                let scatter_dist = -(r.ln()) / model.interaction_coeff;
+
+                if scatter_dist < voxel_dist {
+                    // Scattering event.
+                    neutron.travel(scatter_dist);
+                    neutron.scatter(rng);
+                    neutron.weight *= model.albedo;
+                    data.scatters[index] += neutron.weight;
+
+                    if neutron.weight < model.min_weight {
+                        // Neutron has been absorbed.
+                        data.absorbed += 1;
+                        return;
+                    }
+                } else {
+                    neutron.travel(voxel_dist + model.bump_dist);
+                    break;
+                }
+            } else {
+                println!(
+                    "[WARN!] Neutron escaped the grid at: {}\t{}\t{}",
+                    neutron.ray.pos.x, neutron.ray.pos.y, neutron.ray.pos.z
+                );
+            }
+        }
+    }
+    // Neutron escaped the grid.
+    data.escaped += 1;
+    return;
 }

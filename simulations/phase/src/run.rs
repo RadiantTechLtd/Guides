@@ -37,7 +37,7 @@ pub fn multi_thread<'a>(
     let pb = ProgressBar::new("Simulating", num_neutrons);
     let pb = Arc::new(Mutex::new(pb));
 
-    let num_threads = num_cpus::get();
+    let num_threads = num_cpus::get().min(model.num_threads);
     let threads: Vec<_> = (0..num_threads).collect();
     let mut out: Vec<_> = threads
         .par_iter()

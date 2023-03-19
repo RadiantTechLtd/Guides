@@ -1,5 +1,6 @@
 [package]
 authors = ["Freddy Wordingham <freddy@digilab.co.uk>"]
+build = "build.rs"
 categories = ["science", "simulation"]
 description = "Physics toolkit and simulations."
 documentation = "https://github.com/RadiantTechLTD/guides/simulations/phase/README.md"
@@ -15,6 +16,7 @@ version = "0.0.0"
 arctk = "2.0.*"
 nalgebra = "0.32.*"
 ndarray = "0.15.6"
+netcdf = "0.8.0"
 num_cpus = "1.15.0"
 rand = "0.8.5"
 rayon = "1.7.0"

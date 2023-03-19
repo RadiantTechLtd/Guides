@@ -5,10 +5,17 @@ use std::{f64::consts::PI, fs::read_to_string, path::PathBuf};
 /// Input parameters.
 #[derive(Debug, Deserialize)]
 pub struct Parameters {
+    /// Number of threads to use.
+    pub num_threads: usize,
+
     /// Number of neutrons to simulate.
     pub num_neutrons: usize,
     /// Number of neutrons to simulate per block.
     pub block_size: usize,
+    /// Bump distance,
+    pub bump_dist: f64,
+    /// Minimum weight.
+    pub min_weight: f64,
 
     /// Neutron gun position.
     pub gun_pos: [f64; 3],
