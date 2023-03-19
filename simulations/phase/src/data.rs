@@ -31,11 +31,7 @@ impl Data {
 
     /// Save the data to file.
     #[inline]
-    pub fn save(&self, path: &PathBuf) {
-        let grad = Gradient::new(vec![
-            LinSrgba::new(0.0, 0.0, 0.0, 1.0),
-            LinSrgba::new(1.0, 1.0, 1.0, 1.0),
-        ]);
+    pub fn save(&self, colour_map: &Gradient<LinSrgba>, path: &PathBuf) {
         let shape = self.scatters.shape();
 
         let max = *self.scatters.max().expect("Failed to find max value.");
@@ -44,15 +40,21 @@ impl Data {
         let z_slice = self.scatters.slice(s![shape[2] / 2, .., ..]);
 
         png::save(
-            x_slice.mapv(|value| grad.get((value / max) as f32)).view(),
+            x_slice
+                .mapv(|value| colour_map.get((value / max) as f32))
+                .view(),
             &path.join("x.png"),
         );
         png::save(
-            y_slice.mapv(|value| grad.get((value / max) as f32)).view(),
+            y_slice
+                .mapv(|value| colour_map.get((value / max) as f32))
+                .view(),
             &path.join("y.png"),
         );
         png::save(
-            z_slice.mapv(|value| grad.get((value / max) as f32)).view(),
+            z_slice
+                .mapv(|value| colour_map.get((value / max) as f32))
+                .view(),
             &path.join("z.png"),
         );
     }

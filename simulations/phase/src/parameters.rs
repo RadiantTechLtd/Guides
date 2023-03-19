@@ -7,6 +7,8 @@ use std::{f64::consts::PI, fs::read_to_string, path::PathBuf};
 pub struct Parameters {
     /// Number of threads to use.
     pub num_threads: usize,
+    /// Colour map.
+    pub colour_map: Vec<String>,
 
     /// Number of neutrons to simulate.
     pub num_neutrons: usize,

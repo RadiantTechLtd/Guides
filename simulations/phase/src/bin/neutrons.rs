@@ -31,7 +31,7 @@ fn main() {
     println!("Escaped grid  >> {}", data.escaped);
     println!("Absorbed      >> {}", data.absorbed);
     println!("Scatters      >> {}", data.scatters.sum());
-    data.save(&out_dir);
+    data.save(&model.colour_map, &out_dir);
 }
 
 /// Initialise the input and output directories.

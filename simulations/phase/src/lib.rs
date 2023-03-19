@@ -1,3 +1,4 @@
+pub mod colours;
 pub mod data;
 pub mod engine;
 pub mod grid;
@@ -6,6 +7,7 @@ pub mod neutron;
 pub mod parameters;
 pub mod run;
 
+pub use self::colours::*;
 pub use self::data::*;
 pub use self::engine::*;
 pub use self::grid::*;
