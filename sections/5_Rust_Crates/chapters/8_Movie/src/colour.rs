@@ -14,8 +14,8 @@ fn hex_to_rgb(hex: &str) -> (f32, f32, f32) {
     (red, green, blue)
 }
 
-pub fn image(data: Array2<u16>, cols: &[&str], max_iter: u16) -> Array3<u8> {
-    let cs: Vec<_> = cols
+pub fn image(data: Array2<u16>, cmap: &[&str], max_iter: u16) -> Array3<u8> {
+    let cs: Vec<_> = cmap
         .iter()
         .map(|col| {
             let (r, g, b) = hex_to_rgb(col);

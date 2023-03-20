@@ -28,7 +28,8 @@ fn main() {
     // Run the simulation.
     let mut data = Data::new(model.grid.num_voxels);
     let num_steps = params.num_steps.min(params.num_neutrons);
-    for step in 0..params.num_steps {
+
+    for step in 0..num_steps {
         data = run::multi_thread(
             data,
             params.num_neutrons / num_steps,
