@@ -1,0 +1,13 @@
+[tool.poetry]
+authors = ["Freddy Wordingham <freddy@digilab.co.uk>"]
+description = "Minimum example of Python using MPI"
+name = "mpi-for-python"
+readme = "README.md"
+version = "0.0.0"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
