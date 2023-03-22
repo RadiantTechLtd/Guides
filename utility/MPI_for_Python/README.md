@@ -34,5 +34,5 @@ poetry install
 Run the `MPI` example:
 
 ```bash
-mpirun -n 4 python scripts/run.py
+mpirun -n 4 python scripts/0_basic.py
 ```
