@@ -5,9 +5,6 @@ use std::{env::current_dir, fs::create_dir, path::PathBuf};
 use neutron::{run, Data, Model, Parameters, Particle};
 
 /// Entrypoint.
-/// # Parameters
-/// * `_bin_path`: Path to the binary. Included by default.
-/// * `params_path`: Path to the parameters file relative, to the "input/" directory.
 fn main() {
     // Parse command line arguments.
     args!(_bin_path: PathBuf, params_path: PathBuf);
@@ -88,12 +85,7 @@ fn my_engine(_i: usize, rng: &mut ThreadRng, model: &Model, data: &mut Data) {
 }
 
 /// Sample the model.
-/// # Parameters
-/// * `i`: Current (unique) neutron index.
-/// * `rng`: Random number generator.
-/// * `model`: Complete information about the environment.
-/// * `data`: Mutable reference to cumulative output data to store the results.
-fn sample(mut neutron: Neutron, rng: &mut ThreadRng, model: &Model, data: &mut Data) {
+fn sample(mut neutron: Particle, rng: &mut ThreadRng, model: &Model, data: &mut Data) {
     while let Some(index) = model.grid.voxel_index(&neutron.ray.pos) {
         let voxel = model.grid.generate_voxel(index);
         let mut dist_travelled = 0.0;
