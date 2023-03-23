@@ -22,5 +22,5 @@ Cargo.lock
 # MacOS
 .DS_Store
 
-# Output
+## Freddy ##
 output/
