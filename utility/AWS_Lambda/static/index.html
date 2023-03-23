@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Mandelbrot</title>
+        <link rel="stylesheet" href="style.css" />
+        <script src="logic.js"></script>
+    </head>
+    <body>
+        <h1>Plot part of the Mandelbrot set</h1>
+
+        <label for="real">Real:</label>
+        <input id="real" type="number" value="-0.5" /><br />
+
+        <label for="imag">Imag:</label>
+        <input id="imag" type="number" value="0.0" /><br />
+
+        <label for="scale">Scale: </label>
+        <input id="scale" type="number" value="2.0" /><br /><br />
+
+        <button onClick="plot()">Plot!</button><br />
+    </body>
+</html>

@@ -16,7 +16,7 @@ curl -i -X POST $URL \
     --data-binary @- << EOF
 { 
     "real": "-0.5", 
-    "imag": "0.", 
-    "size": "2." 
+    "imag": "0.0", 
+    "scale": "2.0" 
 }
 EOF

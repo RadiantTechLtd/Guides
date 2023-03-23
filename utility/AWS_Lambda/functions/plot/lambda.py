@@ -6,7 +6,9 @@ import mandybrot as mandy
 
 def handler(event, context):
     body = unwrap_payload(event)
+    print(f"\n{'>'*40}\n")
     print(body)
+    print(f"\n{'<'*40}\n")
     return response()
 
 
