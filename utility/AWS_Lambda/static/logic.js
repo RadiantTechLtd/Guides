@@ -1,5 +1,5 @@
-const baseURL = "http://127.0.0.1:3000";
-// const baseURL = "https://0hku56rtzd.execute-api.eu-west-1.amazonaws.com/Prod";
+// const baseURL = "http://127.0.0.1:3000";
+const baseURL = "https://emvttxnn22.execute-api.eu-west-2.amazonaws.com/Prod";
 
 const plot = () => {
     // Definitions

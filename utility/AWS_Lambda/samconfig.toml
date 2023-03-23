@@ -1,0 +1,10 @@
+version = 0.1
+[default]
+[default.deploy]
+[default.deploy.parameters]
+stack_name = "freddy-testy"
+s3_bucket = "aws-sam-cli-managed-default-samclisourcebucket-g3b45ajo24ga"
+s3_prefix = "freddy-testy"
+region = "eu-west-2"
+capabilities = "CAPABILITY_IAM"
+image_repositories = ["PlotFunction=939027885851.dkr.ecr.eu-west-2.amazonaws.com/freddytesty0c2f3641/plotfunction617fea88repo"]

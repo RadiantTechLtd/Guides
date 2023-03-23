@@ -1,0 +1,26 @@
+[package]
+authors = ["Freddy Wordingham <freddy@digilab.co.uk>"]
+build = "build.rs"
+categories = ["science", "simulation"]
+description = "Physics toolkit and simulations."
+documentation = "https://github.com/RadiantTechLTD/guides/simulations/phase/README.md"
+edition = "2021"
+keywords = ["physics", "monte-carlo", "ray-tracing", "simulation"]
+license-file = "LICENSE"
+name = "neutron"
+readme = "README.md"
+repository = "https://github.com/RadiantTechLTD/guides"
+version = "0.0.0"
+
+[dependencies]
+arctk = "2.0.*"
+nalgebra = "0.32.*"
+ndarray = "0.15.6"
+ndarray-stats = "0.5.1"
+# netcdf = "0.8.0"
+num_cpus = "1.15.0"
+palette = "0.6.1"
+rand = "0.8.5"
+rayon = "1.7.0"
+serde = { version = "1.0.*", features = ["derive"] }
+serde_json = "1.0.*"
