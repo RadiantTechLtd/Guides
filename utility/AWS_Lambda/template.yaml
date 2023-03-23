@@ -16,22 +16,22 @@ Globals:
     Timeout: 60
 
 Resources:
-  MandelbrotFunction:
+  PlotFunction:
     Type: AWS::Serverless::Function
     Properties:
       Description: "A lambda that plots the Mandelbrot set."
       PackageType: Image
       Events:
-        Mandelbrot:
+        Plot:
           Type: Api
           Properties:
-            Path: /mandelbrot
+            Path: /plot
             Method: post
     Metadata:
       Dockerfile: Dockerfile
-      DockerContext: ./functions/mandelbrot
+      DockerContext: ./functions/plot
 
 Outputs:
-  MandelbrotApi:
+  PlotApi:
     Description: "API Gateway endpoint URL for Mandelbrot function"
-    Value: !Sub "https://${ServerlessRestApi}.execute-api.${AWS::Region}.amazonaws.com/Prod/mandelbrot"
+    Value: !Sub "https://${ServerlessRestApi}.execute-api.${AWS::Region}.amazonaws.com/Prod/plot"
